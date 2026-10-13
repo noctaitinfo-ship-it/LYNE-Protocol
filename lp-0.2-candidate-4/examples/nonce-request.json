@@ -1,0 +1,28 @@
+{
+ "what": "a request with an lp02.nonce (SPEC §16)",
+ "from_vector": "NC-valid-post",
+ "context": {
+  "now": 1790000000,
+  "binding": {
+   "client_kid": "pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE",
+   "client_thing_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8"
+  },
+  "required": true
+ },
+ "object": {
+  "method": "POST",
+  "target_uri": "https://a.example/t/6S67Froq1FzHbhX8pZ3RzA",
+  "headers": {
+   "signature-input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1790000000;nonce=\"8pWeVwjHBR_3ALkgHTTibQ\";keyid=\"pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE\";alg=\"ed25519\"",
+   "signature": "sig1=:t0sZAuruXTAyjNAqIDFevk3odujf+8CyycO5t3rHlJaJp0oR+qQCaZLgcjLCS+YoFBeSVPX6z9kg1T1fl+ByDQ==:",
+   "content-digest": "sha-256=:mxootvJgaEYfjC20UVVy8oWdwBA6e2hZpsqSzzB9ogg=:"
+  },
+  "body": "{\"answer\":\"yes\"}"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "kid": "pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE"
+  }
+ }
+}

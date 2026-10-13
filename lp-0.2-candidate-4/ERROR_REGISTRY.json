@@ -1,0 +1,993 @@
+{
+ "candidate": "lp02-private-candidate-4",
+ "source": "spec/SPEC.md §10 (+ codes named in their own sections)",
+ "codes": [
+  {
+   "code": "ACTOR_UNKNOWN",
+   "http": 403,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "AGREEMENT_INVALID",
+   "http": 400,
+   "module": "agreement (§17)",
+   "expected_by_vectors": 15,
+   "vector_modules": [
+    "lp02.agreement"
+   ]
+  },
+  {
+   "code": "AGREEMENT_OPEN",
+   "http": 409,
+   "module": "agreement (§17)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "AGREEMENT_SIGNED",
+   "http": 409,
+   "module": "agreement (§17)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "AGREEMENT_UNKNOWN",
+   "http": 404,
+   "module": "agreement (§17)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "ATTEMPT_ORDER",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "BINDING_MISSING",
+   "http": 409,
+   "module": "request",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "BINDING_UNKNOWN",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 9,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "CAP_*",
+   "http": null,
+   "module": "linecaps",
+   "expected_by_vectors": 23,
+   "vector_modules": []
+  },
+  {
+   "code": "CHANNEL_NOT_GRANTED",
+   "http": null,
+   "module": "liveline (§20)",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.liveline"
+   ]
+  },
+  {
+   "code": "CHANNEL_THING_MISMATCH",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "CHANNEL_UNSUPPORTED",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "CLIENT_LEFT",
+   "http": 409,
+   "module": "exit, request, wake",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.exit",
+    "lp02.recovery",
+    "lp02.request",
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "CLIENT_MODULES_INVALID",
+   "http": 400,
+   "module": "federation",
+   "expected_by_vectors": 7,
+   "vector_modules": [
+    "lp02.federation"
+   ]
+  },
+  {
+   "code": "DELEGATION_CYCLE",
+   "http": 400,
+   "module": "delegation",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_DENIED",
+   "http": 403,
+   "module": "delegation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_EPOCH_STALE",
+   "http": 409,
+   "module": "delegation",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_EXHAUSTED",
+   "http": 409,
+   "module": "delegation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_EXPIRED",
+   "http": 403,
+   "module": "delegation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_INVALID",
+   "http": 400,
+   "module": "delegation",
+   "expected_by_vectors": 7,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_PARENT",
+   "http": 400,
+   "module": "delegation",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_REVOKED",
+   "http": 403,
+   "module": "delegation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_SCOPE",
+   "http": 409,
+   "module": "delegation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_TOO_DEEP",
+   "http": 400,
+   "module": "delegation",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELEGATION_WIDENS",
+   "http": 403,
+   "module": "delegation",
+   "expected_by_vectors": 10,
+   "vector_modules": [
+    "lp02.delegation"
+   ]
+  },
+  {
+   "code": "DELIVERY_EXPIRED",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "DELIVERY_INVALID",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "DELIVERY_REPLAY",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "DELIVERY_UNKNOWN",
+   "http": 404,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "DIGEST_MISMATCH",
+   "http": 400,
+   "module": "§2.3",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "common.rfc9421",
+    "lp02.nonce"
+   ]
+  },
+  {
+   "code": "ENDPOINT_EXPOSED",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "FED_DOC_INVALID",
+   "http": 400,
+   "module": "federation",
+   "expected_by_vectors": 16,
+   "vector_modules": [
+    "lp02.admission",
+    "lp02.federation",
+    "lp02.linecaps"
+   ]
+  },
+  {
+   "code": "FED_DOC_STALE",
+   "http": 400,
+   "module": "federation",
+   "expected_by_vectors": 7,
+   "vector_modules": [
+    "lp02.admission",
+    "lp02.federation",
+    "lp02.linecaps",
+    "lp02.trust"
+   ]
+  },
+  {
+   "code": "FED_DOWNGRADE",
+   "http": 409,
+   "module": "federation",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.federation"
+   ]
+  },
+  {
+   "code": "INTRO_EXPIRED",
+   "http": 403,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.introduction"
+   ]
+  },
+  {
+   "code": "INTRO_INVALID",
+   "http": 400,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 11,
+   "vector_modules": [
+    "lp02.introduction"
+   ]
+  },
+  {
+   "code": "INTRO_LIMIT",
+   "http": 409,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "INTRO_SCOPE",
+   "http": 409,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.introduction"
+   ]
+  },
+  {
+   "code": "INTRO_TARGET_MISMATCH",
+   "http": 409,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.introduction"
+   ]
+  },
+  {
+   "code": "INVALID_JSON",
+   "http": 400,
+   "module": "all (malformed body, duplicate members)",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "common"
+   ]
+  },
+  {
+   "code": "KEY_MISMATCH",
+   "http": 403,
+   "module": "§2.3",
+   "expected_by_vectors": 12,
+   "vector_modules": [
+    "common.rfc9421",
+    "lp02.admission",
+    "lp02.agreement",
+    "lp02.exit",
+    "lp02.nonce",
+    "lp02.result",
+    "lp02.trust",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "KEY_REVOKED",
+   "http": 403,
+   "module": "result",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.channel",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "LINE_ACTIVE",
+   "http": 409,
+   "module": "exit, request, wake",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.exit"
+   ]
+  },
+  {
+   "code": "LINE_PROFILE_INVALID",
+   "http": 400,
+   "module": "liveline (§20)",
+   "expected_by_vectors": 23,
+   "vector_modules": [
+    "lp02.liveline"
+   ]
+  },
+  {
+   "code": "LINE_PROFILE_MISMATCH",
+   "http": 409,
+   "module": "liveline (§20)",
+   "expected_by_vectors": 32,
+   "vector_modules": [
+    "lp02.liveline"
+   ]
+  },
+  {
+   "code": "MANIFEST_INVALID",
+   "http": 400,
+   "module": "linecaps (a manifest outside §7's caps grammar, refused by the client before accepting — found by the block-58 architecture check)",
+   "expected_by_vectors": 8,
+   "vector_modules": [
+    "lp02.linecaps"
+   ]
+  },
+  {
+   "code": "MODULE_NOT_NEGOTIATED",
+   "http": 409,
+   "module": "request, linecaps (client did not declare the module)",
+   "expected_by_vectors": 6,
+   "vector_modules": [
+    "lp02.channel",
+    "lp02.linecaps",
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "MODULE_UNSUPPORTED",
+   "http": 409,
+   "module": "federation (required module not negotiated)",
+   "expected_by_vectors": 7,
+   "vector_modules": [
+    "lp02.federation",
+    "lp02.linecaps"
+   ]
+  },
+  {
+   "code": "MODULE_VERSION_UNSUPPORTED",
+   "http": 400,
+   "module": "all (known module, unknown version)",
+   "expected_by_vectors": 17,
+   "vector_modules": [
+    "lp02.admission",
+    "lp02.agreement",
+    "lp02.channel",
+    "lp02.delegation",
+    "lp02.federation",
+    "lp02.introduction",
+    "lp02.linecaps",
+    "lp02.liveline",
+    "lp02.recovery",
+    "lp02.referral",
+    "lp02.result",
+    "lp02.wake",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "NONCE_INVALID",
+   "http": 400,
+   "module": "nonce (§16)",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.nonce"
+   ]
+  },
+  {
+   "code": "NONCE_NOT_HERE",
+   "http": 400,
+   "module": "nonce (§16)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "NONCE_REPLAYED",
+   "http": 401,
+   "module": "nonce (§16)",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.nonce"
+   ]
+  },
+  {
+   "code": "NONCE_REQUIRED",
+   "http": 401,
+   "module": "nonce (§16)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.nonce"
+   ]
+  },
+  {
+   "code": "NOT_YOUR_TURN",
+   "http": 403,
+   "module": "request",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "NO_ROUTE",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "OFFER_INVALID",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "OFFER_NOT_VISIBLE",
+   "http": 403,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "OFFER_STALE",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "OPEN_*",
+   "http": 400,
+   "module": "admission, referral (see §4.2, §8.3)",
+   "expected_by_vectors": 45,
+   "vector_modules": []
+  },
+  {
+   "code": "OPTION_UNKNOWN",
+   "http": 400,
+   "module": "request",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.request",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "PAYLOAD_DIGEST_MISMATCH",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "PEER_INVALID",
+   "http": 400,
+   "module": "referral",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "PEER_UNKNOWN",
+   "http": 404,
+   "module": "referral",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "POLICY_NOT_MET",
+   "http": 409,
+   "module": "agreement (§17)",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.agreement"
+   ]
+  },
+  {
+   "code": "PROOF_ANCHOR",
+   "http": 409,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "PROOF_AUTHORITY",
+   "http": 403,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "PROOF_INVALID",
+   "http": 400,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "PROOF_NOT_AVAILABLE",
+   "http": 409,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "PROOF_NOT_CLOSED",
+   "http": 409,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "PROOF_SCOPE",
+   "http": 409,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "PROOF_SIGNATURE",
+   "http": 401,
+   "module": "result proof (§15)",
+   "expected_by_vectors": 7,
+   "vector_modules": [
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "RATE_LIMITED",
+   "http": 429,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "RECEIPT_INVALID",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "RECEIPT_REQUIRED",
+   "http": 409,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "RECIPIENT_INVALID",
+   "http": 400,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "RECOVERY_EPOCH_STALE",
+   "http": 409,
+   "module": "recovery",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_EXPIRED",
+   "http": 403,
+   "module": "recovery",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_INVALID",
+   "http": 400,
+   "module": "recovery",
+   "expected_by_vectors": 6,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_PENDING",
+   "http": 409,
+   "module": "recovery",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_REVOKED",
+   "http": 403,
+   "module": "recovery",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_UNKNOWN",
+   "http": 404,
+   "module": "recovery",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "RECOVERY_USED",
+   "http": 409,
+   "module": "recovery",
+   "expected_by_vectors": 107,
+   "vector_modules": [
+    "lp02.recovery"
+   ]
+  },
+  {
+   "code": "REQUEST_DECIDED",
+   "http": 409,
+   "module": "request",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "REQUEST_OPEN",
+   "http": 409,
+   "module": "request",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "REQUEST_UNKNOWN",
+   "http": 404,
+   "module": "request",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.request"
+   ]
+  },
+  {
+   "code": "RESULT_BASIS_INVALID",
+   "http": 401,
+   "module": "result",
+   "expected_by_vectors": 14,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "RESULT_EPOCH_STALE",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "RESULT_EXISTS",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "RESULT_INVALID",
+   "http": 400,
+   "module": "result",
+   "expected_by_vectors": 8,
+   "vector_modules": [
+    "lp02.result",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "RESULT_NOT_AGREED",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "RESULT_OUTCOME_MISMATCH",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "RESULT_SCOPE",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 4,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "RESULT_STALE",
+   "http": 409,
+   "module": "result",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.result"
+   ]
+  },
+  {
+   "code": "ROUTE_NOT_OFFERED",
+   "http": 403,
+   "module": "channel /2 (§19)",
+   "expected_by_vectors": 6,
+   "vector_modules": [
+    "lp02.channel"
+   ]
+  },
+  {
+   "code": "SIGNATURE_INVALID",
+   "http": 401,
+   "module": "§2.3",
+   "expected_by_vectors": 46,
+   "vector_modules": [
+    "common",
+    "common.rfc9421",
+    "lp02.agreement",
+    "lp02.channel",
+    "lp02.delegation",
+    "lp02.introduction",
+    "lp02.nonce",
+    "lp02.recovery",
+    "lp02.result",
+    "lp02.trust",
+    "lyne-result-proof"
+   ]
+  },
+  {
+   "code": "STATE_CONFLICT",
+   "http": 409,
+   "module": "request",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "THING_CLOSED",
+   "http": 409,
+   "module": "exit, request, wake",
+   "expected_by_vectors": 5,
+   "vector_modules": [
+    "lp02.agreement",
+    "lp02.channel",
+    "lp02.recovery",
+    "lp02.result",
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "THING_UNKNOWN",
+   "http": 404,
+   "module": "§2.3",
+   "expected_by_vectors": 0,
+   "vector_modules": []
+  },
+  {
+   "code": "TRUST_INVALID",
+   "http": 400,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 3,
+   "vector_modules": [
+    "lp02.trust"
+   ]
+  },
+  {
+   "code": "TRUST_ORIGIN_MISMATCH",
+   "http": 409,
+   "module": "trust, introduction (§18)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.trust"
+   ]
+  },
+  {
+   "code": "VERSION_UNSUPPORTED",
+   "http": 409,
+   "module": "federation (no common LP version)",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.federation"
+   ]
+  },
+  {
+   "code": "WAKE_INVALID",
+   "http": 400,
+   "module": "wake",
+   "expected_by_vectors": 11,
+   "vector_modules": [
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "WAKE_LIMIT",
+   "http": 409,
+   "module": "wake",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "WAKE_REPLAY",
+   "http": null,
+   "module": "wake",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "WAKE_UNKNOWN",
+   "http": null,
+   "module": "wake",
+   "expected_by_vectors": 1,
+   "vector_modules": [
+    "lp02.wake"
+   ]
+  },
+  {
+   "code": "WAKE_UNVERIFIED",
+   "http": null,
+   "module": "wake",
+   "expected_by_vectors": 2,
+   "vector_modules": [
+    "lp02.wake"
+   ]
+  }
+ ]
+}

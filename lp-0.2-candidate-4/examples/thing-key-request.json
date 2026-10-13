@@ -1,0 +1,24 @@
+{
+ "what": "a request signed with a Thing-key, RFC 9421 + content-digest (SPEC §2.3)",
+ "from_vector": "H-digest-ok",
+ "context": {
+  "now": 1790000000,
+  "binding": {
+   "client_kid": "pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE",
+   "client_thing_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8"
+  }
+ },
+ "object": {
+  "method": "POST",
+  "target_uri": "https://a.example/t/4amyDEkxyFn7M6V7ajgYhw/wake/lBBxVl_LG2OrmrvPdkPUMw",
+  "headers": {
+   "content-digest": "sha-256=:L9ehoXZfGWQbw6ZNJ4ceCPwm3a8B+fZT0Gt5fBEDGnY=:",
+   "signature-input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1790000000;keyid=\"pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE\";alg=\"ed25519\"",
+   "signature": "sig1=:4RRqNSokfEtQmP6vA+/BitYcKRNkMurTdOb4Iytz7Hg4TjhXFwmGwPBJsMQ+yUCMP2HLlUlyag7INjxeawmDCA==:"
+  },
+  "body": "{\"url\":\"https://agent.example/w/abc\"}"
+ },
+ "expect": {
+  "outcome": "ACCEPT"
+ }
+}

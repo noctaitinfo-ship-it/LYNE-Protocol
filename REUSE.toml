@@ -1,0 +1,26 @@
+# Which license applies to which file — machine-readable, per the REUSE specification (https://reuse.software).
+# Every file of this repository is covered by exactly ONE annotation below; the full license texts are in LICENSES/.
+# The license of a file is declared here, never by editing the file: the LP 0.1 baseline and the frozen candidate
+# stay byte for byte as they are. tests/verify_package.py (P13) checks that every file resolves to exactly one license.
+version = 1
+SPDX-PackageName = "LYNE-Protocol"
+SPDX-PackageSupplier = "Margus Šuman (Estonia)"
+SPDX-PackageDownloadLocation = "NOASSERTION"
+
+# 1. Specification text and documentation — normative and explanatory: CC BY 4.0
+[[annotations]]
+path = ["*.md", "**/*.md", "AUTHORS", "CITATION.cff"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Margus Šuman"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# 2. Schemas, test vectors, examples, machine-readable registries and records, and conformance code: Apache-2.0
+[[annotations]]
+path = ["*.json", "**/*.json", "*.py", "**/*.py", "release/SHA256SUMS", "release/lp-0.1-core.sha256",
+        "release/allowed_signers", "release/revoked_signers",
+        "tests/requirements.txt", "NOTICE", "REUSE.toml", ".gitattributes"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Margus Šuman"
+SPDX-License-Identifier = "Apache-2.0"
+
+# The license texts themselves (LICENSES/*.txt) are reproduced verbatim under their own terms.

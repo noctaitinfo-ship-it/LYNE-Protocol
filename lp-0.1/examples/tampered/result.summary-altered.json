@@ -1,0 +1,18 @@
+{
+  "lp_version": "0.1",
+  "result_id": "8zdVNYsuL8eIT4SdNPv7VA",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "grant_id": "0JM99Kkz1OHyDBXoit2_EA",
+  "line_seq": 1,
+  "outcome": "agreed",
+  "summary": "Visit agreed for Tue 29 Sep, 14:00-16:00. Full tap replacement at the client's cost.",
+  "next_state": {
+    "status": "WAITING",
+    "waiting_on": "provider",
+    "next_action": "Visit on 29 Sep, 14:00-16:00",
+    "deadline": "2026-09-29T16:00:00Z"
+  },
+  "timestamp": "2026-09-28T10:12:00Z",
+  "provider_sig": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..3JBf--pQqtCzF32Lsre6hGBnRStCGBADgCUgQnay4xntCLMbmTN8tvZwXNEmRfs83Fbf-DspVeLOpvK6oZcdBQ",
+  "client_thing_sig": "eyJhbGciOiJFZERTQSIsImtpZCI6ImRYRlFTWVBMUmwzeUk0RlBLZkdiR2pPYkJGcVJpNHRoakppRTV5TkVrOWMifQ..aTWN2wqfRmb_rhpuAesKaTjf7TNI7G-s8VQoPkF3shRez7ihz9LhxDQBmtMY9TdJi8bqjo_LzHw1NS2e_NI8Ag"
+}

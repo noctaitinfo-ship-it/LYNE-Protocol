@@ -1,0 +1,2738 @@
+{
+ "kind": "lp02-liveline-vectors/1",
+ "status": "EXPERIMENTAL · PRIVATE · NOT LP 0.1",
+ "now": 1790000000,
+ "count": 77,
+ "vectors": [
+  {
+   "id": "LL-make-control-and-data",
+   "module": "lp02.liveline",
+   "note": "the frame of a compliant endpoint whose Grant includes data",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.make",
+     "input": {
+      "grant_data": true
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "frame": {
+        "lyne": "lp02.liveline/1",
+        "t": "profile",
+        "channels": {
+         "lyne-control": {
+          "id": 0,
+          "negotiated": true,
+          "ordered": true,
+          "protocol": "",
+          "maxRetransmits": null,
+          "maxPacketLifeTime": null
+         },
+         "lyne-data": {
+          "id": 1,
+          "negotiated": true,
+          "ordered": true,
+          "protocol": "",
+          "maxRetransmits": null,
+          "maxPacketLifeTime": null
+         }
+        }
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-make-control-only",
+   "module": "lp02.liveline",
+   "note": "control only: lyne-data is null",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.make",
+     "input": {
+      "grant_data": false
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "frame": {
+        "lyne": "lp02.liveline/1",
+        "t": "profile",
+        "channels": {
+         "lyne-control": {
+          "id": 0,
+          "negotiated": true,
+          "ordered": true,
+          "protocol": "",
+          "maxRetransmits": null,
+          "maxPacketLifeTime": null
+         },
+         "lyne-data": null
+        }
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-ok-data",
+   "module": "lp02.liveline",
+   "note": "both channels exactly as the profile",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": true,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": {
+        "id": 1,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       }
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-ok-control-only",
+   "module": "lp02.liveline",
+   "note": "control only, no data in the Grant",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-negotiated-false",
+   "module": "lp02.liveline",
+   "note": "a runtime that created control in band",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": false,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-control-id-1",
+   "module": "lp02.liveline",
+   "note": "control on stream 1",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 1,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-unordered",
+   "module": "lp02.liveline",
+   "note": "control unordered",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": false,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-max-retransmits",
+   "module": "lp02.liveline",
+   "note": "control partially reliable (maxRetransmits 0)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": 0,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-max-packet-lifetime",
+   "module": "lp02.liveline",
+   "note": "data partially reliable (maxPacketLifeTime 500)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": true,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": {
+        "id": 1,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": 500
+       }
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-protocol",
+   "module": "lp02.liveline",
+   "note": "a non-empty protocol",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "lyne",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-data-missing",
+   "module": "lp02.liveline",
+   "note": "the Grant includes data but no data channel was created",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": true,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-data-without-grant",
+   "module": "lp02.liveline",
+   "note": "a data channel created without data in the Grant",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": {
+        "id": 0,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       },
+       "lyne-data": {
+        "id": 1,
+        "negotiated": true,
+        "ordered": true,
+        "protocol": "",
+        "maxRetransmits": null,
+        "maxPacketLifeTime": null
+       }
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CHANNEL_NOT_GRANTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-local-no-control",
+   "module": "lp02.liveline",
+   "note": "no control channel",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.local",
+     "input": {
+      "grant_data": false,
+      "channels": {
+       "lyne-control": null,
+       "lyne-data": null
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-ok-data",
+   "module": "lp02.liveline",
+   "note": "a compliant frame, data granted",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-ok-control-only",
+   "module": "lp02.liveline",
+   "note": "a compliant frame, control only",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-member-order",
+   "module": "lp02.liveline",
+   "note": "member order is free (JSON objects)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"channels\":{\"lyne-data\":{\"maxPacketLifeTime\":null,\"maxRetransmits\":null,\"protocol\":\"\",\"ordered\":true,\"negotiated\":true,\"id\":1},\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}},\"t\":\"profile\",\"lyne\":\"lp02.liveline/1\"}"
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-too-large",
+   "module": "lp02.liveline",
+   "note": "more than 1024 bytes",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-not-json",
+   "module": "lp02.liveline",
+   "note": "not JSON",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{lyne: profile"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-array",
+   "module": "lp02.liveline",
+   "note": "JSON but not an object",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "[1,2]"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-duplicate-member",
+   "module": "lp02.liveline",
+   "note": "a duplicate member (strict JSON)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-lp01-object-first",
+   "module": "lp02.liveline",
+   "note": "an LP 0.1 object where the frame must be",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"kind\":\"bye\",\"reason\":\"DONE\"}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-lyne-number",
+   "module": "lp02.liveline",
+   "note": "lyne is not a string",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":1,\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-version-2",
+   "module": "lp02.liveline",
+   "note": "a future version of this module",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/2\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "MODULE_VERSION_UNSUPPORTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-other-module",
+   "module": "lp02.liveline",
+   "note": "a frame of another module on control",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.linecaps/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-version-0",
+   "module": "lp02.liveline",
+   "note": "version 0 is not a version",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/0\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-t-hello",
+   "module": "lp02.liveline",
+   "note": "t is not profile",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"hello\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-extra-member",
+   "module": "lp02.liveline",
+   "note": "an extra top-level member",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null},\"x\":1}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-channels-missing-data-key",
+   "module": "lp02.liveline",
+   "note": "channels without the lyne-data member",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-channels-extra",
+   "module": "lp02.liveline",
+   "note": "channels with a third channel",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null,\"rogue\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-extra",
+   "module": "lp02.liveline",
+   "note": "a descriptor with an extra member",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null,\"label\":\"lyne-control\"},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-string-id",
+   "module": "lp02.liveline",
+   "note": "id as a string",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":\"0\",\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-id-range",
+   "module": "lp02.liveline",
+   "note": "id 65535 is out of range",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":65535,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-negative-retransmits",
+   "module": "lp02.liveline",
+   "note": "maxRetransmits -1",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":-1,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-bool-ordered-number",
+   "module": "lp02.liveline",
+   "note": "ordered as 1",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":1,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-id-fraction",
+   "module": "lp02.liveline",
+   "note": "id written as 0.0 (an integer has no fraction)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0.0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-exponent",
+   "module": "lp02.liveline",
+   "note": "maxRetransmits written as 1e0",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":1e0,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-negative-zero",
+   "module": "lp02.liveline",
+   "note": "id written as -0 is the integer 0",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":-0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-descriptor-long-protocol",
+   "module": "lp02.liveline",
+   "note": "a protocol of 256 characters",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-no-control",
+   "module": "lp02.liveline",
+   "note": "lyne-control null: no control channel",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":null,\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-without-grant",
+   "module": "lp02.liveline",
+   "note": "a data channel the Grant does not include",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CHANNEL_NOT_GRANTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-without-grant-and-bad-control",
+   "module": "lp02.liveline",
+   "note": "rule 7 before rule 8",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":false,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CHANNEL_NOT_GRANTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-negotiated-false",
+   "module": "lp02.liveline",
+   "note": "the peer created control in band",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":false,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-id-1",
+   "module": "lp02.liveline",
+   "note": "control on stream 1",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-id-7",
+   "module": "lp02.liveline",
+   "note": "control on another stream",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":7,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-unordered",
+   "module": "lp02.liveline",
+   "note": "control unordered",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":false,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-max-retransmits",
+   "module": "lp02.liveline",
+   "note": "control with maxRetransmits 3",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":3,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-max-retransmits-0",
+   "module": "lp02.liveline",
+   "note": "control with maxRetransmits 0 (unreliable)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":0,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-max-packet-lifetime",
+   "module": "lp02.liveline",
+   "note": "control with maxPacketLifeTime 1000",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":1000},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-control-protocol",
+   "module": "lp02.liveline",
+   "note": "control with a non-empty protocol",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": false,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"lyne-control\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-missing",
+   "module": "lp02.liveline",
+   "note": "data granted but no data channel",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-id-0",
+   "module": "lp02.liveline",
+   "note": "data on stream 0",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-swapped-ids",
+   "module": "lp02.liveline",
+   "note": "control on 1 and data on 0",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-duplicate-stream-id",
+   "module": "lp02.liveline",
+   "note": "both channels on stream 0",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-unordered",
+   "module": "lp02.liveline",
+   "note": "data unordered",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":false,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-max-retransmits",
+   "module": "lp02.liveline",
+   "note": "data with maxRetransmits 5",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":5,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-max-packet-lifetime",
+   "module": "lp02.liveline",
+   "note": "data with maxPacketLifeTime 250",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":250}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-protocol",
+   "module": "lp02.liveline",
+   "note": "data with a protocol",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"x\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-frame-data-negotiated-false",
+   "module": "lp02.liveline",
+   "note": "data created in band",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.frame",
+     "input": {
+      "grant_data": true,
+      "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":false,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-verified",
+   "module": "lp02.liveline",
+   "note": "control opens, the peer's frame verifies",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "ice_connected"
+       },
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "verified",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-verified-then-lp01",
+   "module": "lp02.liveline",
+   "note": "after verification LP 0.1 objects flow",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"kind\":\"result_proposal\"}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "verified",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-waiting",
+   "module": "lp02.liveline",
+   "note": "control open, no frame yet, inside the timeout",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "elapsed",
+        "ms": 9999
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "waiting",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-profile-timeout",
+   "module": "lp02.liveline",
+   "note": "no frame within 10 s after control opened (peer's control on another stream, or none)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "elapsed",
+        "ms": 10000
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-setup-timeout",
+   "module": "lp02.liveline",
+   "note": "ICE connected, control never opens within 30 s (missing control channel)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "ice_connected"
+       },
+       {
+        "e": "elapsed",
+        "ms": 29999
+       },
+       {
+        "e": "elapsed",
+        "ms": 1
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-setup-ok-before-timeout",
+   "module": "lp02.liveline",
+   "note": "control opens before the setup timeout",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "ice_connected"
+       },
+       {
+        "e": "elapsed",
+        "ms": 29000
+       },
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "elapsed",
+        "ms": 5000
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "verified",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-lp01-first",
+   "module": "lp02.liveline",
+   "note": "an LP 0.1 object before the frame",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"kind\":\"result_proposal\"}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-second-frame",
+   "module": "lp02.liveline",
+   "note": "a second frame after verification",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-dcep-control",
+   "module": "lp02.liveline",
+   "note": "the peer opened lyne-control in band (negotiated=false)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "ice_connected"
+       },
+       {
+        "e": "datachannel",
+        "label": "lyne-control"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-dcep-data",
+   "module": "lp02.liveline",
+   "note": "the peer opened lyne-data in band",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "datachannel",
+        "label": "lyne-data"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-dcep-rogue",
+   "module": "lp02.liveline",
+   "note": "an in-band channel with another label",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       },
+       {
+        "e": "datachannel",
+        "label": "rogue"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CHANNEL_NOT_GRANTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-bad-frame",
+   "module": "lp02.liveline",
+   "note": "the frame fails §5",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":2,\"maxPacketLifeTime\":null}}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-data-without-authority",
+   "module": "lp02.liveline",
+   "note": "the peer's frame shows data, the Grant has none",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CHANNEL_NOT_GRANTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-data-held",
+   "module": "lp02.liveline",
+   "note": "data before verification is held, then delivered",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "a"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "b"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "waiting",
+       "held_data": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-data-delivered",
+   "module": "lp02.liveline",
+   "note": "held data is delivered on verification",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "a"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":{\"id\":1,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null}}}"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "b"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "verified",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-held-overflow",
+   "module": "lp02.liveline",
+   "note": "a 65th held data message",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "0"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "1"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "2"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "3"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "4"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "5"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "6"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "7"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "8"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "9"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "10"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "11"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "12"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "13"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "14"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "15"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "16"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "17"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "18"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "19"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "20"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "21"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "22"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "23"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "24"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "25"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "26"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "27"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "28"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "29"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "30"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "31"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "32"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "33"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "34"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "35"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "36"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "37"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "38"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "39"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "40"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "41"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "42"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "43"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "44"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "45"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "46"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "47"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "48"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "49"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "50"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "51"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "52"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "53"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "54"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "55"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "56"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "57"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "58"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "59"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "60"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "61"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "62"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "63"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "64"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-held-64",
+   "module": "lp02.liveline",
+   "note": "64 held data messages are allowed",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": true,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "0"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "1"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "2"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "3"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "4"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "5"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "6"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "7"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "8"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "9"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "10"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "11"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "12"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "13"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "14"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "15"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "16"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "17"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "18"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "19"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "20"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "21"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "22"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "23"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "24"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "25"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "26"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "27"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "28"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "29"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "30"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "31"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "32"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "33"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "34"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "35"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "36"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "37"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "38"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "39"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "40"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "41"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "42"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "43"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "44"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "45"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "46"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "47"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "48"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "49"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "50"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "51"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "52"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "53"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "54"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "55"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "56"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "57"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "58"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "59"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "60"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "61"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "62"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-data",
+        "text": "63"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "waiting",
+       "held_data": 64
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-after-failure",
+   "module": "lp02.liveline",
+   "note": "events after a failure are not processed",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "datachannel",
+        "label": "lyne-control"
+       },
+       {
+        "e": "message",
+        "channel": "lyne-control",
+        "text": "{\"lyne\":\"lp02.liveline/1\",\"t\":\"profile\",\"channels\":{\"lyne-control\":{\"id\":0,\"negotiated\":true,\"ordered\":true,\"protocol\":\"\",\"maxRetransmits\":null,\"maxPacketLifeTime\":null},\"lyne-data\":null}}"
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "LINE_PROFILE_MISMATCH"
+     }
+    }
+   ]
+  },
+  {
+   "id": "LL-session-fresh-line",
+   "module": "lp02.liveline",
+   "note": "a new line_seq is a new session: verification starts again (no state carried)",
+   "context": {
+    "now": 1790000000,
+    "negotiated": true
+   },
+   "steps": [
+    {
+     "op": "ll.session",
+     "input": {
+      "grant_data": false,
+      "events": [
+       {
+        "e": "control_open"
+       },
+       {
+        "e": "elapsed",
+        "ms": 3000
+       }
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "state": "waiting",
+       "held_data": 0
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

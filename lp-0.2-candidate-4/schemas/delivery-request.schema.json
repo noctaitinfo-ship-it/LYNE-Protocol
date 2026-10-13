@@ -1,0 +1,83 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "delivery-request.schema.json",
+ "title": "Delivery request: ephemeral (deleted at exp + 300 s); no route, no order, no history member (EXPERIMENTAL lp02.channel/2; PRIVATE; NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "v",
+  "thing_id",
+  "delivery_id",
+  "from",
+  "to",
+  "payload_digest",
+  "created",
+  "exp",
+  "signature"
+ ],
+ "properties": {
+  "v": {
+   "const": "lp02.channel/2"
+  },
+  "thing_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "delivery_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "from": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "role",
+    "kid"
+   ],
+   "properties": {
+    "role": {
+     "type": "string",
+     "pattern": "^[a-z][a-z0-9_-]{0,31}$"
+    },
+    "kid": {
+     "type": "string",
+     "pattern": "^[A-Za-z0-9_-]{43}$"
+    }
+   }
+  },
+  "to": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "role",
+    "kid"
+   ],
+   "properties": {
+    "role": {
+     "type": "string",
+     "pattern": "^[a-z][a-z0-9_-]{0,31}$"
+    },
+    "kid": {
+     "type": "string",
+     "pattern": "^[A-Za-z0-9_-]{43}$"
+    }
+   }
+  },
+  "payload_digest": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{43}$"
+  },
+  "created": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "exp": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "signature": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]{86}$"
+  }
+ }
+}

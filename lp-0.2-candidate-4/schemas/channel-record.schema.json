@@ -1,0 +1,55 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "channel-record.schema.json",
+ "title": "What persists of the module for a Thing: current offers only — no sender, recipient, time or digest of any past exchange (EXPERIMENTAL lp02.channel/2; PRIVATE; NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "thing_id",
+  "offers",
+  "active_deliveries",
+  "retained_digests",
+  "content_retained"
+ ],
+ "properties": {
+  "thing_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "offers": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "actor",
+     "channels"
+    ],
+    "properties": {
+     "actor": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{43}$"
+     },
+     "channels": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[a-z][a-z0-9.-]{0,31}$"
+      }
+     }
+    }
+   }
+  },
+  "active_deliveries": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "retained_digests": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "content_retained": {
+   "const": false
+  }
+ }
+}

@@ -1,0 +1,213 @@
+{
+ "kind": "lyne-lp01-identity/1",
+ "claim": "every file under lp-0.1/ is byte-identical to the canonical LP 0.1 core (locked 2026-09-27, manifest at LAP-A 04fb8be)",
+ "manifest": "release/lp-0.1-core.sha256",
+ "declared_aggregate": "abadf2b433846d726f6dedea86fd32e3dec2d6ffa6c959fa7690a7a0e5032ce9",
+ "computed_aggregate": "abadf2b433846d726f6dedea86fd32e3dec2d6ffa6c959fa7690a7a0e5032ce9",
+ "files": [
+  {
+   "source": "03_Protokoll/CHANGELOG.md",
+   "package": "lp-0.1/CHANGELOG.md",
+   "sha256": "15819bf3b3ea8f85a5f90ad85a40dba3821d9ef2ad33394ca00bd93d0b336eef",
+   "git_blob": "dab2956ca42b9d35a778659d0be3e772f06988e4"
+  },
+  {
+   "source": "03_Protokoll/PROTOCOL.md",
+   "package": "lp-0.1/PROTOCOL.md",
+   "sha256": "2cf2c14543169afe8fbfdcef5108f1ecff974570ac46e6e94324e2395ed12349",
+   "git_blob": "e0ba28649ad15a825385178b3d59ee753309c144"
+  },
+  {
+   "source": "03_Protokoll/Schemas/grant.schema.json",
+   "package": "lp-0.1/Schemas/grant.schema.json",
+   "sha256": "846f373baece3d04f890fbc50820e8e5501d074e5331f9a105083fc4ad58514f",
+   "git_blob": "49cebfb9ef09270089b06e6d96786ae83ade3add"
+  },
+  {
+   "source": "03_Protokoll/Schemas/result.schema.json",
+   "package": "lp-0.1/Schemas/result.schema.json",
+   "sha256": "c78488406d101b9c1a2e501a2d4943deb82efba2344387a7c841eb397c4d3f2b",
+   "git_blob": "ac2d37b26a2c0c1fb15cc47a640d1e32f33b8cf5"
+  },
+  {
+   "source": "03_Protokoll/Schemas/state.schema.json",
+   "package": "lp-0.1/Schemas/state.schema.json",
+   "sha256": "1ccb318be64def81d462530c4f6e761cffb9a5c8ad12b23a75917830b0d18495",
+   "git_blob": "060d0071e3a71e329e7d8a1b3f2bb522b4e0f7d5"
+  },
+  {
+   "source": "03_Protokoll/Schemas/thing.schema.json",
+   "package": "lp-0.1/Schemas/thing.schema.json",
+   "sha256": "066b60f3bb2ec3786548611d35c79f797a36aec854cf883e742fc34def7775d4",
+   "git_blob": "2e0736ca36fbd28fdc61de67f23c9aca2ff3e5bf"
+  },
+  {
+   "source": "03_Protokoll/Threat_model.md",
+   "package": "lp-0.1/Threat_model.md",
+   "sha256": "c68212acc4972d53be846dc412e093f142c8991854e6078f2d43142e87e1fb7c",
+   "git_blob": "e366fbbe8d9aa750509d86c3ff882c4e72e79c36"
+  },
+  {
+   "source": "03_Protokoll/examples/README.md",
+   "package": "lp-0.1/examples/README.md",
+   "sha256": "431fcadb202cf097ac25957aa71262d0636007f35b677a5941252617d504144d",
+   "git_blob": "ec75e157f55b1414d907ff091a8f96085a944ead"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/grant.channel-sms.json",
+   "package": "lp-0.1/examples/invalid/grant.channel-sms.json",
+   "sha256": "6756c1c0c1b62bce0d48f489cca5219edc41c068db223b863d8b4163850b94f5",
+   "git_blob": "1887ec32be07e3da2f759bd33ff0886c6d9ea8fd"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/grant.max_uses-zero.json",
+   "package": "lp-0.1/examples/invalid/grant.max_uses-zero.json",
+   "sha256": "495617ae6dd86f5b50df1151ddfe401958b7423c33dc550ce3d41996257cb948",
+   "git_blob": "6b5ff3ca17c7cedbcd73b856716b01d1b0cc2348"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/grant.raw-secret-field.json",
+   "package": "lp-0.1/examples/invalid/grant.raw-secret-field.json",
+   "sha256": "d046d3fea3cdaae06743fb421cc7debdcbe0363e6d5d8019d0954d9e320a3705",
+   "git_blob": "a938e9e5d77bd4c1b44c7306aea780f927e1e72b"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/result.missing-client-sig.json",
+   "package": "lp-0.1/examples/invalid/result.missing-client-sig.json",
+   "sha256": "ef4d21a4299da93b7d86d762bd88a597ce96e385bb2166e5a8c2c9950e46347d",
+   "git_blob": "0c8d8164a6c992c80d1df29d7329596d7c7c59bd"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/result.summary-too-long.json",
+   "package": "lp-0.1/examples/invalid/result.summary-too-long.json",
+   "sha256": "3be55c2830ed450bb6a6e4065df76bf73a973dcf563515f2322c533e1cf97851",
+   "git_blob": "3d968a1781d43f03da63e3f1137a9f1a0403fb07"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/state.closed-with-deadline.json",
+   "package": "lp-0.1/examples/invalid/state.closed-with-deadline.json",
+   "sha256": "c7189229a5ac51e8f19e959f5b88f29240b211004cd9b90b21b9bdde831f2153",
+   "git_blob": "aa57932d1ebd873d4fe5a01072c2cddd44348fda"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/state.ui-label-status.json",
+   "package": "lp-0.1/examples/invalid/state.ui-label-status.json",
+   "sha256": "30e1838cd91eea8a033dd28e1aa3a6a1d6d6c2bf5c0a80d3676cd4c8c47e8566",
+   "git_blob": "ea04451be371115ae7b09da50a7d7630c2187bd9"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/state.v1-with-prev-hash.json",
+   "package": "lp-0.1/examples/invalid/state.v1-with-prev-hash.json",
+   "sha256": "730db8359514d02aaf89575e1f322a348c696907bdc68566870a5233ffef614c",
+   "git_blob": "c02073fb1034a978eee1a1e56c4d5a67c30c78c0"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/state.waiting-without-waiting_on.json",
+   "package": "lp-0.1/examples/invalid/state.waiting-without-waiting_on.json",
+   "sha256": "90815cbd38531c5409d841c5a01b45a16714bc1523ac7a97835fecc4cf6097a6",
+   "git_blob": "7133d4f72627b1a66bbac59881252caa2e01ca64"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/thing.extra-field.json",
+   "package": "lp-0.1/examples/invalid/thing.extra-field.json",
+   "sha256": "a48391fb2e1d5289faa5fed7071d26a803734e1eb3e1453a0f8bb207716c4dbb",
+   "git_blob": "e2e873d3dd44aa2f4cc133f396e9f898d4e43904"
+  },
+  {
+   "source": "03_Protokoll/examples/invalid/thing.missing-provider_pub.json",
+   "package": "lp-0.1/examples/invalid/thing.missing-provider_pub.json",
+   "sha256": "80935891b80ebb00314c1f83b9a7a95e739c72cad0448877105fdcbc34142b41",
+   "git_blob": "8637e678f20b0976fcdf95bc4731c592758e558a"
+  },
+  {
+   "source": "03_Protokoll/examples/semantic-invalid/grant.redeem-window-too-long.json",
+   "package": "lp-0.1/examples/semantic-invalid/grant.redeem-window-too-long.json",
+   "sha256": "ea7c064c30ad76b423423dd5de92d2b2a7804a961c28dfb0c511dd24b4bb7bc6",
+   "git_blob": "8086de25f2ce37f0189c4f53a5206107523cb534"
+  },
+  {
+   "source": "03_Protokoll/examples/tampered/grant.channels-widened.json",
+   "package": "lp-0.1/examples/tampered/grant.channels-widened.json",
+   "sha256": "d63cd99a5d006663ea2085cdb01c741c93df7f87062c2e5c1c555592f79ecd8e",
+   "git_blob": "3aaf862d97f04a85538983adad984edd9f08e90f"
+  },
+  {
+   "source": "03_Protokoll/examples/tampered/result.summary-altered.json",
+   "package": "lp-0.1/examples/tampered/result.summary-altered.json",
+   "sha256": "ef802668531a098bbb943b8104e2ed1102b1cf2fd6a8c3df7ff4783327837862",
+   "git_blob": "19a26477cecfaea8ccb64c5bd868642b865ca88b"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/grant.json",
+   "package": "lp-0.1/examples/valid/grant.json",
+   "sha256": "86f8d9d1ae842171c0e262a5096a319f9b453cd1657ae6c85dc183f0de57e2bb",
+   "git_blob": "b925e650a1d9f57c0371321220c7908261c4391e"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/redemption.json",
+   "package": "lp-0.1/examples/valid/redemption.json",
+   "sha256": "92b3dd2d19e8fc9a9716060b72ad73eecfdb9cd75b11708e4c2679b94378e9b0",
+   "git_blob": "02670cc9ee2095633ff4f51bc202e30bc46a3c77"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/redemption_receipt.json",
+   "package": "lp-0.1/examples/valid/redemption_receipt.json",
+   "sha256": "ac990ee8b3dc9a0fc2f2b527dc0af59cf02eddc89a9d2dde516968196ab77407",
+   "git_blob": "af0545fb795489d9277466b5d15ccf2da2ce8d3b"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/result.json",
+   "package": "lp-0.1/examples/valid/result.json",
+   "sha256": "c9577738d4b464995797f5784783cb536756842cc302f5463fb33365f75d9832",
+   "git_blob": "75ce305c6b92eae68b3ccf7f6a4d9512fe0620fe"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/signal.json",
+   "package": "lp-0.1/examples/valid/signal.json",
+   "sha256": "028230cfa44ac4e922dd215343732a73017a9f044621d7179d9592776047191a",
+   "git_blob": "bdf6de3c7166afe474191314d72d0a9e209b25bc"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/state.1.json",
+   "package": "lp-0.1/examples/valid/state.1.json",
+   "sha256": "61aef70cf8e4ef59e1eba202af9f2a04c70f952295657eb35697e39576947985",
+   "git_blob": "cb17b596d902ad5a979887f56e90aeadef2f9338"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/state.2.json",
+   "package": "lp-0.1/examples/valid/state.2.json",
+   "sha256": "3e503426a795f9cebe7d4e3ea427db5b49eed084be110d3109742c584bb9715b",
+   "git_blob": "53404526eaf1d542621fccc0f7c625b2acf51905"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/thing.json",
+   "package": "lp-0.1/examples/valid/thing.json",
+   "sha256": "f5302d20ec3b404af5c56191ca903647e6eb32b0557bcc8e2ef504ddaa61b218",
+   "git_blob": "738e162a656a27b55c024b6955fd30790b8e71b6"
+  },
+  {
+   "source": "03_Protokoll/examples/valid/vectors.json",
+   "package": "lp-0.1/examples/valid/vectors.json",
+   "sha256": "14c62c99bed2e498eee8351a5a53900d5da63c955222cf13902f48240e2558b2",
+   "git_blob": "7b76cd8b0ce100aa5532bb27210fbdb213299a8c"
+  },
+  {
+   "source": "03_Protokoll/tests/gen_examples.py",
+   "package": "lp-0.1/tests/gen_examples.py",
+   "sha256": "b509273d8ef3cc050089e64ebf2c64505ff4a7ce62698ae58fdb38c6bd1d11f7",
+   "git_blob": "fc8b0324a60cde1299b3a8eaf4b089841e34c09e"
+  },
+  {
+   "source": "03_Protokoll/tests/lp_testlib.py",
+   "package": "lp-0.1/tests/lp_testlib.py",
+   "sha256": "d2ee1baea5819064c22795363819cf0a846d2c03e20215bdc650a1900006aae9",
+   "git_blob": "4b181bdd94030d1710ef6e66cd53e92da29dd99b"
+  },
+  {
+   "source": "03_Protokoll/tests/run_tests.py",
+   "package": "lp-0.1/tests/run_tests.py",
+   "sha256": "cb1b2c88a62e7b6f847e648f9593b01df17d328a738f792a4ddc0c255fa82398",
+   "git_blob": "e9ce2df6bd92012c5f09ad8f7fae6b330f5584b0"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+  "lp_version": "0.1",
+  "grant_id": "0JM99Kkz1OHyDBXoit2_EA",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "client_kid": "dXFQSYPLRl3yI4FPKfGbGjObBFqRi4thjJiE5yNEk9c",
+  "bound_at": "2026-09-28T09:07:42Z",
+  "uses_remaining": 1,
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..8L4dlS9GSj1rslL6GHIuRXY9p8p_ALZUk_8lXqWcvxVbUbRxrvk4-6eMCI1OoPWXTA5W9hQ8z0CyPaSIrIx0BQ"
+}

@@ -1,0 +1,30 @@
+{
+ "what": "the channel descriptors of a compliant endpoint with DATA (SPEC §20.3, §20.4)",
+ "from_vector": "LL-local-ok-data",
+ "context": {
+  "now": 1790000000,
+  "negotiated": true
+ },
+ "object": {
+  "lyne-control": {
+   "id": 0,
+   "negotiated": true,
+   "ordered": true,
+   "protocol": "",
+   "maxRetransmits": null,
+   "maxPacketLifeTime": null
+  },
+  "lyne-data": {
+   "id": 1,
+   "negotiated": true,
+   "ordered": true,
+   "protocol": "",
+   "maxRetransmits": null,
+   "maxPacketLifeTime": null
+  }
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {}
+ }
+}

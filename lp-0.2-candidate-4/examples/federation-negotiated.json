@@ -1,0 +1,71 @@
+{
+ "what": "a candidate-4 federation document listing lp02.channel version 2 and lp02.liveline version 1 (SPEC §3, §19, §20)",
+ "from_vector": "C4N-c4-c4",
+ "context": {
+  "now": 1790000000,
+  "candidate": "lp02-private-candidate-4"
+ },
+ "object": {
+  "v": "lp02.federation/1",
+  "origin": "https://b.example",
+  "tenant": "default",
+  "implementation": {
+   "name": "vector",
+   "version": "1"
+  },
+  "lp": [
+   "0.1",
+   "0.2"
+  ],
+  "modules": {
+   "lp02.federation": [
+    1
+   ],
+   "lp02.admission": [
+    1
+   ],
+   "lp02.request": [
+    1
+   ],
+   "lp02.wake": [
+    1
+   ],
+   "lp02.linecaps": [
+    1
+   ],
+   "lp02.referral": [
+    1
+   ],
+   "lp02.exit": [
+    1
+   ],
+   "lp02.channel": [
+    2
+   ],
+   "lp02.liveline": [
+    1
+   ]
+  },
+  "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+  "issued_at": 1789999940,
+  "expires_at": 1790003540,
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..HbpkTWPe9oPtlub47_laWkhi9j1yTAQ98q2Nz-FFq8ONlOxIG52ZkPIrYStWZxO3hQ_FtzmqgANPmzF4JW4SBA"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "lp": "0.2",
+   "modules": {
+    "lp02.federation": 1,
+    "lp02.admission": 1,
+    "lp02.request": 1,
+    "lp02.wake": 1,
+    "lp02.linecaps": 1,
+    "lp02.referral": 1,
+    "lp02.exit": 1,
+    "lp02.channel": 2,
+    "lp02.liveline": 1
+   }
+  }
+ }
+}

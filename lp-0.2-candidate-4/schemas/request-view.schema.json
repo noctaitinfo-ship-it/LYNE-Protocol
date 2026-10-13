@@ -1,0 +1,25 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "request-view.schema.json",
+ "title": "LP 0.2 request-view (PRIVATE, EXPERIMENTAL, UNPUBLISHED, NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "v",
+  "request"
+ ],
+ "properties": {
+  "v": {
+   "const": "lp02.request/1"
+  },
+  "request": {
+   "type": [
+    "object",
+    "null"
+   ]
+  },
+  "roster": {
+   "type": "array"
+  }
+ }
+}

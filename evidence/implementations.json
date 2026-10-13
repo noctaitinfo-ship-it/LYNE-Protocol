@@ -1,0 +1,124 @@
+{
+ "kind": "lyne-implementation-evidence/1",
+ "candidate": "lp02-private-candidate-4",
+ "candidate_revision": 1,
+ "candidate_hash": "1262503847e12101fc83e48712b22e405796591edc5f314643901256efe76525",
+ "vector_counts": {
+  "lp02": 483,
+  "channel2": 55,
+  "liveline": 77,
+  "negotiation": 17
+ },
+ "measured_on": "2026-10-08",
+ "implementations": {
+  "A": {
+   "language": "JavaScript (Node.js)",
+   "origin": "the LYNE product runtime (the candidate was developed with it)",
+   "written_from": "development of the candidate",
+   "profile": "all modules",
+   "conformance": {
+    "steps_conform": 1170,
+    "steps": 1170,
+    "vectors": 632,
+    "verdict": "PASS"
+   }
+  },
+  "B": {
+   "language": "Python (standard library + cryptography)",
+   "origin": "an independently written peer",
+   "written_from": "the specification text",
+   "profile": "all modules",
+   "conformance": {
+    "steps_conform": 1170,
+    "steps": 1170,
+    "vectors": 632,
+    "verdict": "PASS"
+   },
+   "independence": {
+    "verdict": "PASS",
+    "rule": "imports nothing of A or C; written from the specification"
+   }
+  },
+  "C": {
+   "language": "C# (.NET base library only)",
+   "origin": "a third implementation",
+   "written_from": "the specification text alone (MINIMAL.md profiles)",
+   "profile": [
+    "common",
+    "common.rfc9421",
+    "lp02.federation",
+    "lp02.admission",
+    "lp02.referral",
+    "lp02.nonce",
+    "lp02.delegation",
+    "lp02.result",
+    "lyne-result-proof",
+    "lp02.agreement",
+    "lp02.channel",
+    "lp02.liveline"
+   ],
+   "conformance": {
+    "steps_conform": 768,
+    "steps": 768,
+    "vectors": 457,
+    "verdict": "PASS"
+   },
+   "independence": {
+    "verdict": "PASS",
+    "rule": "base library only; no reference to A or B; no package, no file or network access"
+   }
+  }
+ },
+ "pairwise_differential_disagreements": {
+  "A/B": 0,
+  "A/C": 0,
+  "B/C": 0
+ },
+ "differential_fuzz": {
+  "A/B": {
+   "verdict": "PASS",
+   "mutated_vectors": 6888,
+   "disagreements": 0,
+   "scope": "the candidate-1 modules (byte-identical in candidate-4)"
+  },
+  "A/B/C": {
+   "verdict": "PASS",
+   "mutated_vectors": 4836,
+   "disagreements": 0,
+   "scope": "the candidate-1 modules (byte-identical in candidate-4)"
+  }
+ },
+ "liveline": {
+  "verdict": "PASS",
+  "fuzz_mutants": 616,
+  "fuzz_disagreements": 0,
+  "browser_interop": {
+   "checks": 49,
+   "passed": 49,
+   "what": "two independently written browser peers (the product's peer and a peer written from the SPEC) in real Chrome: both directions, with and without DATA, 14 incompatible configurations each refused explicitly with the SPEC's code (both peers as verifier), a duplicate stream id, a fresh Line, a reload"
+  }
+ },
+ "channel2": {
+  "verdict": "PASS",
+  "fuzz_mutants": 1368,
+  "fuzz_disagreements": 0,
+  "cross_signing": "objects signed by each of A, B, C verify in both others"
+ },
+ "compatibility_matrix": {
+  "cells": 128,
+  "classes": {
+   "SUPPORTED": 16,
+   "REFUSED": 84,
+   "NEGOTIATED": 28
+  },
+  "failed": 0,
+  "verdict": "PASS",
+  "what": "LP 0.1 and LP 0.2 clients against LP 0.1 and LP 0.2 runtimes, per operation; each cell's observed class against the class the rules require"
+ },
+ "not_claimed": [
+  "adoption by any party other than the author",
+  "an industry standard",
+  "independent third-party review",
+  "that B or C come from another organization: all three were produced within the author's project; B and C were written from the specification text in separate code bases, and automated independence checks show they import nothing of A or of each other"
+ ]
+}

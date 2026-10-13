@@ -1,0 +1,83 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "endpoint-offer.schema.json",
+ "title": "Endpoint offer (/2): an actor's CURRENT, Thing-scoped reachability by adapter BINDINGS; the runtime mints the references (EXPERIMENTAL lp02.channel/2; PRIVATE; NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "v",
+  "thing_id",
+  "actor",
+  "routes",
+  "issued_at",
+  "expires_at",
+  "signature"
+ ],
+ "properties": {
+  "v": {
+   "const": "lp02.channel/2"
+  },
+  "thing_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "actor": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "role",
+    "kid"
+   ],
+   "properties": {
+    "role": {
+     "type": "string",
+     "pattern": "^[a-z][a-z0-9_-]{0,31}$"
+    },
+    "kid": {
+     "type": "string",
+     "pattern": "^[A-Za-z0-9_-]{43}$"
+    }
+   }
+  },
+  "routes": {
+   "type": "array",
+   "maxItems": 8,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "channel",
+     "binding",
+     "expires_at"
+    ],
+    "properties": {
+     "channel": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{0,31}$"
+     },
+     "expires_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+     },
+     "binding": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{16,64}$",
+      "description": "an opaque handle the actor's own adapter issued (never an address, never an Endpoint reference; SPEC §1)"
+     }
+    }
+   }
+  },
+  "issued_at": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "expires_at": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "signature": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]{86}$"
+  }
+ }
+}

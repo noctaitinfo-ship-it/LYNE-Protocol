@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyne.invalid/lp/0.1/result.schema.json",
+  "title": "LYNE LP 0.1 Result",
+  "description": "Bilaterally signed outcome of one Live Line; the only persistent artifact of communication and the input that anchors the Thing's next State. Not a conversation record. See PROTOCOL.md section 9.",
+  "type": "object",
+  "required": ["lp_version", "result_id", "thing_id", "grant_id", "line_seq", "outcome", "summary", "next_state", "timestamp", "provider_sig", "client_thing_sig"],
+  "additionalProperties": false,
+  "properties": {
+    "lp_version": { "const": "0.1" },
+    "result_id": { "$ref": "#/$defs/id" },
+    "thing_id": { "$ref": "#/$defs/id" },
+    "grant_id": { "$ref": "#/$defs/id" },
+    "line_seq": { "type": "integer", "minimum": 1, "maximum": 2147483647 },
+    "outcome": { "enum": ["agreed", "declined", "deferred"] },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "next_state": { "$ref": "#/$defs/next_state" },
+    "timestamp": { "$ref": "#/$defs/timestamp" },
+    "provider_sig": { "$ref": "#/$defs/detached_jws" },
+    "client_thing_sig": { "$ref": "#/$defs/detached_jws" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{22}$" },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "detached_jws": { "type": "string", "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]{86}$" },
+    "next_state": {
+      "type": "object",
+      "required": ["status", "waiting_on", "next_action", "deadline"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["OPEN", "WAITING", "CLOSED"] },
+        "waiting_on": { "enum": ["provider", "client", null] },
+        "next_action": { "type": ["string", "null"], "minLength": 1, "maxLength": 140 },
+        "deadline": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "WAITING" } } },
+          "then": {
+            "properties": {
+              "waiting_on": { "enum": ["provider", "client"] },
+              "next_action": { "type": "string" }
+            }
+          },
+          "else": { "properties": { "waiting_on": { "const": null } } }
+        },
+        {
+          "if": { "properties": { "status": { "const": "CLOSED" } } },
+          "then": {
+            "properties": {
+              "next_action": { "const": null },
+              "deadline": { "const": null }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

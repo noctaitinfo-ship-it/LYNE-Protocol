@@ -1,0 +1,74 @@
+{
+ "kind": "lyne-protocol-package/1",
+ "name": "LYNE-Protocol",
+ "status": "a release exists only as a signed tag that verifies against release/allowed_signers (release/SIGNING.md)",
+ "revision": 3,
+ "revision_note": "revision 3 (2026-10-13): prepared for the first public release, no normative byte changed; revision 2 (2026-10-08): the LP 0.2 part is the frozen lp02-private-candidate-4 (revision 1 carried candidate-1)",
+ "originator": {
+  "name": "Margus Šuman",
+  "role": "author and original designer",
+  "affiliation": "Nocta OÜ",
+  "country": "Estonia",
+  "country_code": "EE"
+ },
+ "versions": [
+  {
+   "id": "lp-0.1",
+   "label": "LP 0.1 (draft 3)",
+   "status": "immutable baseline",
+   "tree": "lp-0.1/",
+   "files": 34,
+   "aggregate_sha256": "abadf2b433846d726f6dedea86fd32e3dec2d6ffa6c959fa7690a7a0e5032ce9",
+   "identity": "release/LP-0.1-IDENTITY.json",
+   "tag": "lp-0.1"
+  },
+  {
+   "id": "lp-0.2-candidate-4",
+   "label": "lp02-private-candidate-4",
+   "status": "experimental candidate — not a standard, not final, not stable",
+   "tree": "lp-0.2-candidate-4/",
+   "frozen_at": "2026-10-08",
+   "revision": 1,
+   "candidate_hash": "1262503847e12101fc83e48712b22e405796591edc5f314643901256efe76525",
+   "manifest_sha256": "23e194aff6795f6fe834c1630b6f40274b876a5bff3d4c7df3dec0f2954c0537",
+   "predecessor": "lp02-private-candidate-3 (2ee40baff8eaff8575b5a55fd04eb313165760c60b9f182639e02f82b39a7a6a)",
+   "modules": {
+    "lp02.federation": 1,
+    "lp02.admission": 1,
+    "lp02.referral": 1,
+    "lp02.request": 1,
+    "lp02.wake": 1,
+    "lp02.linecaps": 1,
+    "lp02.exit": 1,
+    "lp02.result": 1,
+    "lp02.delegation": 1,
+    "lp02.recovery": 1,
+    "lp02.nonce": 1,
+    "lp02.agreement": 1,
+    "lp02.introduction": 1,
+    "lp02.channel": 2,
+    "lp02.liveline": 1
+   },
+   "vector_counts": {
+    "lp02": 483,
+    "channel2": 55,
+    "liveline": 77,
+    "negotiation": 17
+   },
+   "tag": "lp-0.2-candidate-4"
+  }
+ ],
+ "license": {
+  "specification-text": "CC-BY-4.0",
+  "schemas-vectors-conformance-code": "Apache-2.0",
+  "per-file": "REUSE.toml"
+ },
+ "trademark": "no rights granted by either license (TRADEMARK_POLICY.md)",
+ "governance": {
+  "protocol_steward": "Margus Šuman",
+  "affiliation": "Nocta OÜ",
+  "country": "Estonia",
+  "policy": "GOVERNANCE.md"
+ },
+ "files": 134
+}

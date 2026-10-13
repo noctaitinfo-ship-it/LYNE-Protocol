@@ -1,0 +1,20 @@
+{
+ "what": "a discovery descriptor of Open Points (SPEC §4.1)",
+ "from_vector": "D-ok",
+ "context": {
+  "now": 1790000000
+ },
+ "object": {
+  "v": "lp02.admission/1",
+  "aud": "https://a.example",
+  "tenant": "default",
+  "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+  "issued_at": "2026-09-21T14:12:20Z",
+  "valid_until": "2026-09-21T15:03:20Z",
+  "points": [],
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmRlc2NyaXB0b3IifQ..MGE_q7_OxCy-gKGmBt1CrxxHQGJSqB9WQpIRJUQeerPZJBTJLVRGFNmE_919rGo_fFRyP2bNo-1_WH-5iYUQBg"
+ },
+ "expect": {
+  "outcome": "ACCEPT"
+ }
+}

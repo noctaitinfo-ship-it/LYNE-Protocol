@@ -1,0 +1,14 @@
+{
+ "label": "lp02-private-candidate-4",
+ "status": "PRIVATE_FROZEN_CANDIDATE",
+ "published": false,
+ "frozen_at": "2026-10-08",
+ "revision": 1,
+ "decision": "MASTER decision 2026-10-08 (CANDIDATE-4 / WEBRTC INTEROP CLOSURE): candidate-3 as predecessor, unchanged; + lp02.liveline/1, the Live Line WebRTC data-channel profile (LP02-B1)",
+ "predecessor": "lp02-private-candidate-3 (2ee40baff8eaff8575b5a55fd04eb313165760c60b9f182639e02f82b39a7a6a)",
+ "candidate_hash": "1262503847e12101fc83e48712b22e405796591edc5f314643901256efe76525",
+ "candidate_hash_rule": "SHA-256 of JCS(MANIFEST.files) — every file except MANIFEST.json and FREEZE.json, CRLF normalised",
+ "manifest_sha256": "23e194aff6795f6fe834c1630b6f40274b876a5bff3d4c7df3dec0f2954c0537",
+ "publication_target": "the current PRIVATE PROTOCOL PUBLICATION CANDIDATE, subject to OA-01 (real-key verification), OA-02 (patent counsel), OA-03 (explicit publication authorization); never published automatically",
+ "evidence": "LP_0_2_CANDIDATE4_TOOLS/check_candidate4.py + redteam_candidate4.py, all PASS before this freeze"
+}

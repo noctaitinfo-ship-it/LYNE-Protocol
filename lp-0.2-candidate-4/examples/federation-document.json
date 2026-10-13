@@ -1,0 +1,62 @@
+{
+ "what": "a provider's signed federation document (SPEC §3.1)",
+ "from_vector": "F-ok",
+ "context": {
+  "now": 1790000000
+ },
+ "object": {
+  "v": "lp02.federation/1",
+  "origin": "https://b.example",
+  "tenant": "default",
+  "implementation": {
+   "name": "vector",
+   "version": "1"
+  },
+  "lp": [
+   "0.1",
+   "0.2"
+  ],
+  "modules": {
+   "lp02.federation": [
+    1
+   ],
+   "lp02.admission": [
+    1
+   ],
+   "lp02.request": [
+    1
+   ],
+   "lp02.wake": [
+    1
+   ],
+   "lp02.linecaps": [
+    1
+   ],
+   "lp02.referral": [
+    1
+   ],
+   "lp02.exit": [
+    1
+   ]
+  },
+  "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+  "issued_at": 1789999940,
+  "expires_at": 1790003540,
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..7RIZ4pNkokY-aNdnZDOai4SHRWemNkMP0ctsTOsV4iLHXMv-Qd8wAmJG_eavkYXrHLFH8wajo6t-3190zskCCg"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "lp": "0.2",
+   "modules": {
+    "lp02.federation": 1,
+    "lp02.admission": 1,
+    "lp02.request": 1,
+    "lp02.wake": 1,
+    "lp02.linecaps": 1,
+    "lp02.referral": 1,
+    "lp02.exit": 1
+   }
+  }
+ }
+}

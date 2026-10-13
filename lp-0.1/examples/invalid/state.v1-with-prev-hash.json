@@ -1,0 +1,14 @@
+{
+  "lp_version": "0.1",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "version": 1,
+  "prev_state_hash": "zbquiUsLwdwVMVckAd0kegjOAGBJ6NVqa1yoJeZrbe8",
+  "status": "WAITING",
+  "waiting_on": "client",
+  "next_action": "Choose a visit time",
+  "deadline": "2026-09-29T18:00:00Z",
+  "actor": "provider",
+  "result_id": null,
+  "timestamp": "2026-09-28T09:00:00Z",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..sSluZ14y37kJL_YQm_Vysd8Q7RR91A2qhHTeEspiMongCwPbuUmUUeXvFiumiT52-vJ_S9Io8YKmEd0Ynh7PCw"
+}

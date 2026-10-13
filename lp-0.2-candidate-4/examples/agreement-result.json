@@ -1,0 +1,116 @@
+{
+ "what": "a multi-actor Result (SPEC §17)",
+ "from_vector": "AG-valid-all",
+ "context": {
+  "now": 1790000000,
+  "thing": {
+   "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+   "aud": "https://a.example",
+   "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+   "closed_at": null
+  },
+  "customer": {
+   "epoch": 1,
+   "client_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8",
+   "bound_at": "2026-09-21T13:23:20Z"
+  },
+  "accepted": []
+ },
+ "object": {
+  "v": "lp02.agreement/1",
+  "result_id": "w0R0EWaPUeazATENWkZX3A",
+  "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+  "aud": "https://a.example",
+  "outcome": "repair-accepted",
+  "option": "accept",
+  "epoch": 1,
+  "issued_at": "2026-09-21T14:13:20Z",
+  "question": {
+   "request_id": "odDrIy-_vbTUNXOFwChC0Q",
+   "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+   "template": "repair-ok",
+   "label": "Is the repair accepted?",
+   "options": [
+    {
+     "code": "accept",
+     "label": "Yes, accept"
+    },
+    {
+     "code": "reject",
+     "label": "No, redo"
+    },
+    {
+     "code": "later",
+     "label": "Ask me later"
+    }
+   ],
+   "conclusion": {
+    "accept": "repair-accepted",
+    "reject": "repair-rejected"
+   },
+   "policy": {
+    "requirements": [
+     {
+      "roles": [
+       "customer"
+      ],
+      "min": 1
+     },
+     {
+      "roles": [
+       "landlord"
+      ],
+      "min": 1
+     },
+     {
+      "roles": [
+       "technician"
+      ],
+      "min": 1
+     }
+    ]
+   },
+   "deadline": "2026-09-21T15:13:20Z",
+   "created_at": "2026-09-21T14:03:20Z"
+  },
+  "signers": [
+   {
+    "basis": "answer",
+    "role": "customer",
+    "pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8",
+    "created": 1789999940,
+    "signature_input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1789999940;keyid=\"pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE\";alg=\"ed25519\"",
+    "signature": "sig1=:tTLj1+ss+0vfuBZe7BuRLKHOmDFGxdaGYVsO/YcBowTaS04hos1jwQJTlKq3rj4N4GtsOwaXTKmlhYhUzshqAg==:"
+   },
+   {
+    "basis": "answer",
+    "role": "landlord",
+    "pub": "HDjer_OyzrYUFaHvYsf-HX5rBTuPpkDREHIatHvsoPY",
+    "created": 1789999940,
+    "signature_input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1789999940;keyid=\"TNccnZ8wACHIvunuH8vYjuNykeKc3hfhlBBSW6r55W4\";alg=\"ed25519\"",
+    "signature": "sig1=:HIufZDgnB6lyGHzAX9h1OPNhkbjO7ptwjYqx7kjGPGnxNx92rgfjd8imirLjUC341x0qHstzl3YP+VGEkTDNBQ==:"
+   },
+   {
+    "basis": "answer",
+    "role": "technician",
+    "pub": "aqkh_VJgoG9b4jgPAwk_s0hzcKC7Du_e8x4hnhj_adQ",
+    "created": 1789999940,
+    "signature_input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1789999940;keyid=\"WLGRHXcvlDE9v4GuHfK6zpErHizNZtFxJm19lxLt0L0\";alg=\"ed25519\"",
+    "signature": "sig1=:2g3Lm70eufCj3GYDHjVNUM0nOvpRN1gMKFn/+rVDN7caTa+LYiWO53hIEts7lcyzjNpJkEOT6y3xCounX3nzCQ==:"
+   }
+  ],
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmFncmVlbWVudCJ9..hyyC8G4J0ICpqvYaeWUje729CYaOBodfKuBIpcT-a7BPIizt0DxrEZn-soMfXqNjB3Z41kVdn1aBTsJhVCIBAQ"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "outcome": "repair-accepted",
+   "option": "accept",
+   "roles": [
+    "customer",
+    "landlord",
+    "technician"
+   ]
+  }
+ }
+}

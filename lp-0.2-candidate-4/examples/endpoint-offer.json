@@ -1,0 +1,117 @@
+{
+ "what": "an endpoint offer by adapter bindings (SPEC §19.1); its expected result shows the minted references",
+ "from_vector": "C2-one-thing-three-channels",
+ "context": {
+  "now": 1790000000,
+  "negotiated": true,
+  "mint_seed": "thing-1",
+  "bindings": {
+   "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M": [
+    "zvKD7h9pKAD4TpheJw_XydMp",
+    "bvgv4eO2xOQRMkCtarsFwPsV",
+    "iTQ73-pKzWatzBc5ARPh_V-I"
+   ],
+   "aUTW4s-5oxyFQYgxtrYo0RHBPEST0CglZbdJnn3EGM8": [
+    "WrUZVnj560-zXmpvcXO1cCJD",
+    "tpY-M50sOTjA-i_TYP-VcpZj",
+    "tZAUHtRGmUOKvh3MZdaVeGuG",
+    "iK_t5kwFrKV88KG3NwQ5Gh91",
+    "etEBQlRLHGP1_h2g6trNsBnE"
+   ],
+   "xKctYsKgwQtvATCsitAzPlSr5hJ9TWN9sNMFkq_pQcc": [
+    "4LrYkfoDoE5oloA_NjyXctq_"
+   ],
+   "KDYznzSsNfbGe8eXBRXrzGKBOQgZfYOgDD92AKKYARg": [
+    "SgTpY-JVFtg76gSHUjaVn0QR"
+   ],
+   "sj4RWD84Pf-WsJfp_9ddACsh_BRa4TZ2G6rocRP2e8c": [
+    "8ktmt6m6rVFDMKT_4bTuduus"
+   ]
+  },
+  "thing": {
+   "thing_id": "VdKed7Kr2e4Uwv7XuVCG7g",
+   "status": "OPEN",
+   "parties": [
+    {
+     "role": "customer",
+     "kid": "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M",
+     "pub": "Vap4GgloIXjE4efAbgxTjRjhbazHjW25IfYH7BQc6bo",
+     "revoked": false
+    },
+    {
+     "role": "technician",
+     "kid": "aUTW4s-5oxyFQYgxtrYo0RHBPEST0CglZbdJnn3EGM8",
+     "pub": "SEgRlHLc8OElihm3jfukpcEX7yhpNYuBEa5GHLftEeY",
+     "revoked": false
+    },
+    {
+     "role": "provider",
+     "kid": "xKctYsKgwQtvATCsitAzPlSr5hJ9TWN9sNMFkq_pQcc",
+     "pub": "eZY_5ecpNc4NOaksaRFIdwCS7oypK_xW-1k2gnULKOU",
+     "revoked": false
+    },
+    {
+     "role": "customer",
+     "kid": "sj4RWD84Pf-WsJfp_9ddACsh_BRa4TZ2G6rocRP2e8c",
+     "pub": "cAQI-wAq4LPm4-8y6jYfOZ8APBMCtXVWcWUD4b0ng1g",
+     "revoked": true
+    },
+    {
+     "role": "agent",
+     "kid": "KDYznzSsNfbGe8eXBRXrzGKBOQgZfYOgDD92AKKYARg",
+     "pub": "Vy7oYWhd7WTwTG0v6SQJUntHS3AMwit-4y5e-I0wkkQ",
+     "revoked": false
+    }
+   ]
+  }
+ },
+ "object": {
+  "v": "lp02.channel/2",
+  "thing_id": "VdKed7Kr2e4Uwv7XuVCG7g",
+  "actor": {
+   "role": "customer",
+   "kid": "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M"
+  },
+  "routes": [
+   {
+    "channel": "email",
+    "binding": "zvKD7h9pKAD4TpheJw_XydMp",
+    "expires_at": "2026-09-22T14:11:40Z"
+   },
+   {
+    "channel": "voice",
+    "binding": "bvgv4eO2xOQRMkCtarsFwPsV",
+    "expires_at": "2026-09-22T14:11:40Z"
+   },
+   {
+    "channel": "agent",
+    "binding": "iTQ73-pKzWatzBc5ARPh_V-I",
+    "expires_at": "2026-09-22T14:11:40Z"
+   }
+  ],
+  "issued_at": "2026-09-21T14:11:40Z",
+  "expires_at": "2026-09-22T14:11:40Z",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InI0cTI5VDlrdllUTXB1MmtOU2dYa091RFJpeWVqTGVxcmwxOFdHT0NvM00iLCJ0eXAiOiJscDAyLmVuZHBvaW50LW9mZmVyIn0..__jeZGQh84KBhlz7nEteTaMHFEkEgWDfz8_KS7Mq_m58EsjVPT9ZoaLJV26plptPHW62k_RusE4274jjbLtoCw"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "actor": "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M",
+   "generation": 1,
+   "routes": [
+    {
+     "channel": "email",
+     "endpoint_ref": "EB62_ANyBSIEr3MZJwcNyg"
+    },
+    {
+     "channel": "voice",
+     "endpoint_ref": "MODqA-3V9qckz-o0q-BZad"
+    },
+    {
+     "channel": "agent",
+     "endpoint_ref": "hgOsMCjWUlmvFvBUj1H6Yk"
+    }
+   ]
+  }
+ }
+}

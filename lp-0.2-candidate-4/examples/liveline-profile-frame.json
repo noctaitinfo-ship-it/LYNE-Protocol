@@ -1,0 +1,38 @@
+{
+ "what": "the lp02.liveline/1 profile frame request: its expected result is the frame a compliant endpoint sends first on lyne-control (SPEC §20.4)",
+ "from_vector": "LL-make-control-and-data",
+ "context": {
+  "now": 1790000000,
+  "negotiated": true
+ },
+ "object": {
+  "grant_data": true
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "frame": {
+    "lyne": "lp02.liveline/1",
+    "t": "profile",
+    "channels": {
+     "lyne-control": {
+      "id": 0,
+      "negotiated": true,
+      "ordered": true,
+      "protocol": "",
+      "maxRetransmits": null,
+      "maxPacketLifeTime": null
+     },
+     "lyne-data": {
+      "id": 1,
+      "negotiated": true,
+      "ordered": true,
+      "protocol": "",
+      "maxRetransmits": null,
+      "maxPacketLifeTime": null
+     }
+    }
+   }
+  }
+ }
+}

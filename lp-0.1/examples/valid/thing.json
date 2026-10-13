@@ -1,0 +1,11 @@
+{
+  "lp_version": "0.1",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "type": "repair.plumbing",
+  "title": "Kitchen tap replacement - order 1042",
+  "provider_pub": "w_PK5LcHn_5isylchsKI71mHRvBtWn066-Hv8Pfdol4",
+  "created_at": "2026-09-28T09:00:00Z",
+  "closed_at": null,
+  "version": 1,
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..XxZSFR2oNe2GtfrO7zdtHPp3ijZ1sgrSx3MWaO213fR8V35-ZI-KEDmqqU8wLLVEWIQT9olPn6eVvRDkLExuAQ"
+}

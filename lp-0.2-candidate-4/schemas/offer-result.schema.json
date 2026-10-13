@@ -1,0 +1,44 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "offer-result.schema.json",
+ "title": "The accept result of an offer (/2): the references the runtime MINTED, in route order, and the offer generation (EXPERIMENTAL lp02.channel/2; PRIVATE; NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "actor",
+  "generation",
+  "routes"
+ ],
+ "properties": {
+  "actor": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{43}$"
+  },
+  "generation": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "routes": {
+   "type": "array",
+   "maxItems": 8,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "channel",
+     "endpoint_ref"
+    ],
+    "properties": {
+     "channel": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{0,31}$"
+     },
+     "endpoint_ref": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{22}$"
+     }
+    }
+   }
+  }
+ }
+}

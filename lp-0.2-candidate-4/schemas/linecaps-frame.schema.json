@@ -1,0 +1,28 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "linecaps-frame.schema.json",
+ "title": "LP 0.2 linecaps-frame (PRIVATE, EXPERIMENTAL, UNPUBLISHED, NOT LP 0.1)",
+ "type": "object",
+ "required": [
+  "lyne",
+  "t"
+ ],
+ "properties": {
+  "lyne": {
+   "const": "lp02.linecaps/1"
+  },
+  "t": {
+   "enum": [
+    "hello",
+    "manifest",
+    "accept",
+    "struct",
+    "file-start",
+    "file-chunk",
+    "sample",
+    "command",
+    "command-result"
+   ]
+  }
+ }
+}

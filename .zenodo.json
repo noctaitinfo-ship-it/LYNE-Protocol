@@ -1,0 +1,24 @@
+{
+ "upload_type": "software",
+ "access_right": "open",
+ "title": "LYNE Protocol",
+ "version": "0.1",
+ "creators": [
+  {
+   "name": "Šuman, Margus",
+   "affiliation": "Nocta OÜ"
+  }
+ ],
+ "description": "LYNE is communication infrastructure for matters between parties without persistent personal addresses: a signed, versioned Thing and State, a purpose-bound and time-limited Grant, a temporary Live Line, and a Result signed by both parties that anchors the next State. LP 0.1 is the immutable baseline; LP 0.2 candidate-4 is an experimental candidate. The repository contains the specification texts, JSON Schemas, test vectors, examples and a language-neutral conformance kit.",
+ "keywords": [
+  "protocol",
+  "capability",
+  "authority",
+  "provider-client",
+  "WebRTC",
+  "specification",
+  "conformance"
+ ],
+ "license": "other-open",
+ "notes": "Two licenses, each for its own part (LICENSE.md; per file: REUSE.toml): the specification text and documentation under CC BY 4.0, the schemas, test vectors, examples and conformance code under Apache-2.0. No trademark rights; no separate patent pledge. No legal or patent review of this publication has been performed; no freedom-to-operate is claimed. LP 0.2 candidate-4 is an experimental candidate, not a standard. Not peer reviewed."
+}

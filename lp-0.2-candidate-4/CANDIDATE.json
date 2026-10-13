@@ -1,0 +1,90 @@
+{
+ "label": "lp02-private-candidate-4",
+ "status": "PRIVATE",
+ "published": false,
+ "date": "2026-10-08",
+ "decision": "MASTER decision 2026-10-08 (CANDIDATE-4 / WEBRTC INTEROP CLOSURE): candidate-3 as predecessor, unchanged; + lp02.liveline/1, the Live Line WebRTC data-channel profile (LP02-B1)",
+ "predecessor": {
+  "label": "lp02-private-candidate-3",
+  "candidate_hash": "2ee40baff8eaff8575b5a55fd04eb313165760c60b9f182639e02f82b39a7a6a",
+  "status": "PRIVATE_FROZEN_CANDIDATE (immutable; strong private evidence)"
+ },
+ "baseline": {
+  "label": "lp02-private-candidate-1",
+  "revision": 1,
+  "freeze_files": {
+   "SPEC.md": "13a1dd54ae581d8d9866972edc0b4a1735caa41f978092bdb30fe6333381d2ba",
+   "MODULES.md": "7531ed96c587a35834cb9c604bec95e8348e149df874d26bae1c212b08e52df0",
+   "MINIMAL.md": "9f74e6f6937cff92d3dacd6d1e8e374bfa6aa31db496fd1233551eb3365b681c",
+   "MODULE_INVENTORY.md": "a667353be5af3cd424cd07e67b1fbc13fba1a3c7950732b7a4f83b6404b8b974",
+   "tests/DRIVER.md": "0d1bc7d0cb7148df30283216ee4db6fd3fcc6ad264780dc4ed53fe7e5477524e",
+   "vectors/lp02-vectors.json": "3b0882d87909b65fe2573121f18538c0eae93e016e3b3f6acc7e90ba74a71427",
+   "vectors/generate.py": "e2011d1d65cef72410fe9968c2e81dcd9c04bbcc086377e2f911afe76f133d5e"
+  },
+  "byte_identical_copies": {
+   "vectors/lp02-vectors.json": "3b0882d87909b65fe2573121f18538c0eae93e016e3b3f6acc7e90ba74a71427",
+   "vectors/generate.py": "e2011d1d65cef72410fe9968c2e81dcd9c04bbcc086377e2f911afe76f133d5e"
+  }
+ },
+ "delta": {
+  "added": "lp02.liveline/1 (Live Line WebRTC data-channel profile)",
+  "source": "Future_lab/LP02_LIVELINE_DRAFT",
+  "closes": "LP02-B1",
+  "codes_added": [
+   "LINE_PROFILE_INVALID",
+   "LINE_PROFILE_MISMATCH"
+  ],
+  "codes_reused": [
+   "CHANNEL_NOT_GRANTED",
+   "MODULE_VERSION_UNSUPPORTED",
+   "MODULE_NOT_NEGOTIATED",
+   "MODULE_UNSUPPORTED"
+  ],
+  "versions": {
+   "lp02.liveline": [
+    1
+   ]
+  },
+  "iana_registration": "none (labels; DCEP protocol empty)"
+ },
+ "excluded": [
+  "lp02.thread/1 (rejected)",
+  "deferred and rejected modules of block 33",
+  "product / runtime features",
+  "store and distribution material (Block 75)"
+ ],
+ "modules": {
+  "lp02.federation": 1,
+  "lp02.admission": 1,
+  "lp02.referral": 1,
+  "lp02.request": 1,
+  "lp02.wake": 1,
+  "lp02.linecaps": 1,
+  "lp02.exit": 1,
+  "lp02.result": 1,
+  "lp02.delegation": 1,
+  "lp02.recovery": 1,
+  "lp02.nonce": 1,
+  "lp02.agreement": 1,
+  "lp02.introduction": 1,
+  "lp02.channel": 2,
+  "lp02.liveline": 1
+ },
+ "evidence": {
+  "lyne-result-proof": 1
+ },
+ "profile_context": {
+  "candidate": "lp02-private-candidate-4"
+ },
+ "vector_counts": {
+  "lp02": 483,
+  "channel2": 55,
+  "liveline": 77,
+  "negotiation": 17
+ },
+ "implementations": {
+  "A": "04_Prototuup/P1_provider_pilot (JavaScript, the LYNE runtime)",
+  "B": "04_Prototuup/lp02-independent-peer (Python, from the spec)",
+  "C": "04_Prototuup/lp02-impl-c (C#, .NET base library only, from the spec; C's scope in tests/run_three_way.py)"
+ }
+}

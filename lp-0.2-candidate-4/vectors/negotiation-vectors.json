@@ -1,0 +1,1653 @@
+{
+ "kind": "lyne-lp02-vectors/1",
+ "candidate": "lp02-private-candidate-4",
+ "status": "PRIVATE - EXPERIMENTAL - UNPUBLISHED - NOT LP 0.1",
+ "now": 1790000000,
+ "count": 17,
+ "vectors": [
+  {
+   "id": "C4N-c4-c4",
+   "module": "lp02.federation",
+   "note": "two candidate-4 parties: lp02.liveline version 1 (and lp02.channel version 2) negotiated",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..HbpkTWPe9oPtlub47_laWkhi9j1yTAQ98q2Nz-FFq8ONlOxIG52ZkPIrYStWZxO3hQ_FtzmqgANPmzF4JW4SBA"
+      },
+      "required": [
+       "lp02.liveline",
+       "lp02.channel"
+      ]
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2,
+        "lp02.liveline": 1
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-c4-local-c3-remote",
+   "module": "lp02.federation",
+   "note": "candidate-4 meets candidate-3: lp02.liveline is absent — the candidate-4 party applies no profile (LP 0.1 §8.3 alone), never imitates it",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..CHqR_eYowMMmeA1MYxOcvwrOs-g9AEBGw94VWxVIwcouhWEzV2BBSmSWTL-MoiuWoCAMBY_7vVD5EotXM9kCDg"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-c3-remote-required",
+   "module": "lp02.federation",
+   "note": "a candidate-4 party that requires the profile refuses a candidate-3 peer",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..CHqR_eYowMMmeA1MYxOcvwrOs-g9AEBGw94VWxVIwcouhWEzV2BBSmSWTL-MoiuWoCAMBY_7vVD5EotXM9kCDg"
+      },
+      "required": [
+       "lp02.liveline"
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "MODULE_UNSUPPORTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-c3-local-c4-remote",
+   "module": "lp02.federation",
+   "note": "a candidate-3 party meeting a candidate-4 peer: lp02.liveline is unknown to it and ignored (no silent upgrade)",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-3"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..-JEckghwXnLdEgZsKAcBZk8nJzpOIaeeDNiH-0lEqInp1rW4WTz_Dkr5tLNogb0o9iaJo7utNHdgPmhtQoL9CA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..HbpkTWPe9oPtlub47_laWkhi9j1yTAQ98q2Nz-FFq8ONlOxIG52ZkPIrYStWZxO3hQ_FtzmqgANPmzF4JW4SBA"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-c3-local-c4-remote-required",
+   "module": "lp02.federation",
+   "note": "a candidate-3 party cannot negotiate the profile even when asked to",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-3"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..-JEckghwXnLdEgZsKAcBZk8nJzpOIaeeDNiH-0lEqInp1rW4WTz_Dkr5tLNogb0o9iaJo7utNHdgPmhtQoL9CA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..HbpkTWPe9oPtlub47_laWkhi9j1yTAQ98q2Nz-FFq8ONlOxIG52ZkPIrYStWZxO3hQ_FtzmqgANPmzF4JW4SBA"
+      },
+      "required": [
+       "lp02.liveline"
+      ]
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "MODULE_UNSUPPORTED"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-c1-peer",
+   "module": "lp02.federation",
+   "note": "a candidate-1 peer: candidate-1's set, no channel, no profile",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..7RIZ4pNkokY-aNdnZDOai4SHRWemNkMP0ctsTOsV4iLHXMv-Qd8wAmJG_eavkYXrHLFH8wajo6t-3190zskCCg"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-lp01-peer",
+   "module": "lp02.federation",
+   "note": "an LP 0.1 peer: no module at all; Lines follow LP 0.1 §8.3",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1"
+       ],
+       "modules": {},
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..KxGAaqqRy2jRgpHJDN3DQXzQeqTrv3K5zvPS2QN1IJxTtb5S0oyB1Rjobhzb0ZyhPOD9Z4OqpDguiL23Iw7bAQ"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.1",
+       "modules": {}
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-peer-liveline-1-and-2",
+   "module": "lp02.federation",
+   "note": "a peer that supports /1 and a future /2: the highest common version, 1",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1,
+         2
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..MGMNWTieahs1K2NjUzk4rivYS63ZXGOa0fChxmLVCOxfqIKeV1DXTb9s3n21CILfNF7oSzRvzHAgI9ElR3LvBw"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2,
+        "lp02.liveline": 1
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-peer-liveline-2-only",
+   "module": "lp02.federation",
+   "note": "a peer with a future /2 only: no common version, absent — never a silent /1 imitation",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         2
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..e9RMKMBFSptfvesXqgl8axJ_0MMr4GIfNGHkn6aGeQriFCJvlS6UX40O_UvT-WA1Y0sAS0sEQyYkfnTCOYg2BA"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-missing-dependency",
+   "module": "lp02.federation",
+   "note": "a document listing lp02.liveline without lp02.federation: the dependency is missing, the module is absent",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..aG2QfR8jhnU1-_kcB4iqSg_zkyWaUNTPF4-zL8gvE2cV5lvYL7_95bhZd7m17bpO73CERpl97A9hoRoNKmeyAA"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {}
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-downgrade-replay",
+   "module": "lp02.federation",
+   "note": "a replayed older document of the same peer without the profile: a downgrade, refused",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4",
+    "ratchet": {}
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999990,
+       "expires_at": 1790003590,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..C3Si9jfj601u-M2WGsJRFlU_Emzn6UeERpB0tVxs8njgNElHI0uKnLhMp-jWYO5IHBtWproUvAAp2ekUvSqlDg"
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "lp": "0.2",
+       "modules": {
+        "lp02.federation": 1,
+        "lp02.admission": 1,
+        "lp02.request": 1,
+        "lp02.wake": 1,
+        "lp02.linecaps": 1,
+        "lp02.referral": 1,
+        "lp02.exit": 1,
+        "lp02.channel": 2,
+        "lp02.liveline": 1
+       }
+      }
+     }
+    },
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999900,
+       "expires_at": 1790003500,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..QuBnNzolXG-jTsHBg3ryX6EuVmPXUd5_IvxwsclnFZ7hOst9zmjxvdHwfUE05vK4mTnOrNQEb0t6sT3K0gHCAA"
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "FED_DOWNGRADE"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-forged-upgrade",
+   "module": "lp02.federation",
+   "note": "a candidate-3 document rewritten to claim lp02.liveline after signing: refused",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.negotiate",
+     "input": {
+      "local": {
+       "v": "lp02.federation/1",
+       "origin": "https://a.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..9ibo2IhGIy5TdwimMzznDXlxH9mozjocwRq1xXkZMh400zhKPV_9bUpk5rUmPbk9ELQVbbRCnDKhUgleOR7tAA"
+      },
+      "remote": {
+       "v": "lp02.federation/1",
+       "origin": "https://b.example",
+       "tenant": "default",
+       "implementation": {
+        "name": "vector",
+        "version": "1"
+       },
+       "lp": [
+        "0.1",
+        "0.2"
+       ],
+       "modules": {
+        "lp02.federation": [
+         1
+        ],
+        "lp02.admission": [
+         1
+        ],
+        "lp02.request": [
+         1
+        ],
+        "lp02.wake": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.referral": [
+         1
+        ],
+        "lp02.exit": [
+         1
+        ],
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       },
+       "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4",
+       "issued_at": 1789999940,
+       "expires_at": 1790003540,
+       "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InY5d3pEdDFQMGQtSDhLekU3OEg0OWN1VTgyUS1McmdDX3czVko2SHNGYVUiLCJ0eXAiOiJscDAyLmZlZGVyYXRpb24ifQ..CHqR_eYowMMmeA1MYxOcvwrOs-g9AEBGw94VWxVIwcouhWEzV2BBSmSWTL-MoiuWoCAMBY_7vVD5EotXM9kCDg"
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "FED_DOC_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-cm-c4-liveline",
+   "module": "lp02.federation",
+   "note": "candidate-4 profile: the client declares lp02.liveline/1",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.client_modules",
+     "input": {
+      "body": {
+       "v": "lp02.federation/1",
+       "modules": {
+        "lp02.request": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "modules": {
+        "lp02.request": [
+         1
+        ],
+        "lp02.linecaps": [
+         1
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-cm-c4-liveline-and-channel",
+   "module": "lp02.federation",
+   "note": "candidate-4 profile: candidate-3's channel /2 and the profile",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.client_modules",
+     "input": {
+      "body": {
+       "v": "lp02.federation/1",
+       "modules": {
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     },
+     "expect": {
+      "outcome": "ACCEPT",
+      "result": {
+       "modules": {
+        "lp02.channel": [
+         2
+        ],
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-cm-c3-liveline",
+   "module": "lp02.federation",
+   "note": "candidate-3 profile: lp02.liveline is unknown, refused",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-3"
+   },
+   "steps": [
+    {
+     "op": "fed.client_modules",
+     "input": {
+      "body": {
+       "v": "lp02.federation/1",
+       "modules": {
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CLIENT_MODULES_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-cm-c1-liveline",
+   "module": "lp02.federation",
+   "note": "candidate-1 profile: unknown, refused",
+   "context": {
+    "now": 1790000000
+   },
+   "steps": [
+    {
+     "op": "fed.client_modules",
+     "input": {
+      "body": {
+       "v": "lp02.federation/1",
+       "modules": {
+        "lp02.liveline": [
+         1
+        ]
+       }
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CLIENT_MODULES_INVALID"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C4N-cm-c4-thread",
+   "module": "lp02.federation",
+   "note": "lp02.thread is not a module of any candidate",
+   "context": {
+    "now": 1790000000,
+    "candidate": "lp02-private-candidate-4"
+   },
+   "steps": [
+    {
+     "op": "fed.client_modules",
+     "input": {
+      "body": {
+       "v": "lp02.federation/1",
+       "modules": {
+        "lp02.thread": [
+         1
+        ]
+       }
+      }
+     },
+     "expect": {
+      "outcome": "REFUSE",
+      "code": "CLIENT_MODULES_INVALID"
+     }
+    }
+   ]
+  }
+ ]
+}

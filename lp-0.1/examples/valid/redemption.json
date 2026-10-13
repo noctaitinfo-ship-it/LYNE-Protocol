@@ -1,0 +1,9 @@
+{
+  "lp_version": "0.1",
+  "grant_id": "0JM99Kkz1OHyDBXoit2_EA",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "client_thing_pub": "d83BGWwr_U4mWNwAaff7XTARHklPpK3gWJlgQP9e4q8",
+  "challenge": "ZB7DEm3SOSun0A155T3PtA",
+  "secret_proof": "8F-2iy6GgvtW2Fq92ETD1lLaMGUs0S6isy3V2l4_y74",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImRYRlFTWVBMUmwzeUk0RlBLZkdiR2pPYkJGcVJpNHRoakppRTV5TkVrOWMifQ..autfcQZnk-O9ZvfGbHcsflKv5z0AISJ4MPEOynTUAI6dvo5K9xCz3Xm7tHDicfuMPE3-7fDhWv0lOHN_M4u_Bg"
+}

@@ -1,0 +1,22 @@
+{
+  "lp_version": "0.1",
+  "grant_id": "0JM99Kkz1OHyDBXoit2_EA",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "issuer": "w_PK5LcHn_5isylchsKI71mHRvBtWn066-Hv8Pfdol4",
+  "subject": "client",
+  "aud": "https://provider.example",
+  "purpose": "schedule-visit",
+  "channels": [
+    "voice",
+    "video"
+  ],
+  "issued_at": "2026-09-28T09:05:00Z",
+  "redeem_by": "2026-09-28T09:20:00Z",
+  "not_before": "2026-09-28T09:05:00Z",
+  "exp": "2026-09-28T21:05:00Z",
+  "line_max_seconds": 900,
+  "max_uses": 1,
+  "epoch": 0,
+  "secret_commitment": "f4ATSZHqgX4ctJsbfFdvPEKHldwdD0sG8Fg1pQjgnNc",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..d8OZafRPzh_ZyJjJinEmSGq4_npQr5WeWsSdmJvqczhG0biFy93j-mhNbOMD-22sZH5SDFKvRLwH51RPLCDhDw"
+}

@@ -1,0 +1,52 @@
+{
+  "note": "TEST VECTORS derived from public labels. NOT SECRETS. MUST NOT be used outside tests.",
+  "label_prefix": "LYNE LP 0.1 TEST VECTOR - NOT A SECRET - ",
+  "labels": {
+    "provider_key_seed": "provider key",
+    "client_thing_key_seed": "client thing key",
+    "grant_secret": "grant secret",
+    "line_salt": "line salt"
+  },
+  "provider_kid": "wFvyrITcZooJ8L1k8DyHPPwa995W7TZt3-Ws4d_rYiE",
+  "client_kid": "dXFQSYPLRl3yI4FPKfGbGjObBFqRi4thjJiE5yNEk9c",
+  "secret_commitment": "f4ATSZHqgX4ctJsbfFdvPEKHldwdD0sG8Fg1pQjgnNc",
+  "delivery_link": "https://provider.example/l/0JM99Kkz1OHyDBXoit2_EA#_Ipj9fPh_LJ0VNS_Y_ELqnvmj2-wgbQF3S4sqZcyjMs",
+  "rendezvous": [
+    {
+      "direction": "p2c",
+      "bucket_start": "2026-09-28T10:00:00Z",
+      "bucket": 5968632,
+      "epoch": 0,
+      "line_seq": 1,
+      "addr": "9iducG9NjhQpG5TewWiKInGD2pfA3Xrl21lYCIEcqyA"
+    },
+    {
+      "direction": "p2c",
+      "bucket_start": "2026-09-28T10:05:00Z",
+      "bucket": 5968633,
+      "epoch": 0,
+      "line_seq": 1,
+      "addr": "kmVADqPqeuoTS_Yr5x0OenQArmesJ_7V7zY0cMSlP50"
+    },
+    {
+      "direction": "c2p",
+      "bucket_start": "2026-09-28T10:00:00Z",
+      "bucket": 5968632,
+      "epoch": 0,
+      "line_seq": 1,
+      "addr": "DEF2HlyfyNTMn7C9OzhKY4hRUH3aSJxXSh-vD7zYo2k"
+    },
+    {
+      "direction": "c2p",
+      "bucket_start": "2026-09-28T10:05:00Z",
+      "bucket": 5968633,
+      "epoch": 0,
+      "line_seq": 1,
+      "addr": "Cvm4MZsDBFFDQUvANm8BAOo5WK9qAVLzz2AAdTpzzaU"
+    }
+  ],
+  "k_signal_sha256": {
+    "p2c": "sY1ZkNCKxmlfQ4xntX_wPwaNooyZVrO8MFc_jM_jsLo",
+    "c2p": "D_tY7zCvNnIPopvNIo36heVcVQAzogp71N8mPaggK8U"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyne.invalid/lp/0.1/state.schema.json",
+  "title": "LYNE LP 0.1 State",
+  "description": "One signed, versioned, hash-chained State of a Thing. Wire status values are OPEN, WAITING, CLOSED; LIVE and RESULT are lifecycle phases, not State values. See PROTOCOL.md section 4.",
+  "type": "object",
+  "required": ["lp_version", "thing_id", "version", "prev_state_hash", "status", "waiting_on", "next_action", "deadline", "actor", "result_id", "timestamp", "signature"],
+  "additionalProperties": false,
+  "properties": {
+    "lp_version": { "const": "0.1" },
+    "thing_id": { "$ref": "#/$defs/id" },
+    "version": { "$ref": "#/$defs/positive_counter" },
+    "prev_state_hash": { "type": ["string", "null"], "pattern": "^[A-Za-z0-9_-]{43}$" },
+    "status": { "enum": ["OPEN", "WAITING", "CLOSED"] },
+    "waiting_on": { "enum": ["provider", "client", null] },
+    "next_action": { "type": ["string", "null"], "minLength": 1, "maxLength": 140 },
+    "deadline": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "actor": { "enum": ["provider", "client"] },
+    "result_id": { "type": ["string", "null"], "pattern": "^[A-Za-z0-9_-]{22}$" },
+    "timestamp": { "$ref": "#/$defs/timestamp" },
+    "signature": { "$ref": "#/$defs/detached_jws" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "WAITING" } } },
+      "then": {
+        "properties": {
+          "waiting_on": { "enum": ["provider", "client"] },
+          "next_action": { "type": "string" }
+        }
+      },
+      "else": { "properties": { "waiting_on": { "const": null } } }
+    },
+    {
+      "if": { "properties": { "status": { "const": "CLOSED" } } },
+      "then": {
+        "properties": {
+          "next_action": { "const": null },
+          "deadline": { "const": null }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "version": { "const": 1 } } },
+      "then": {
+        "properties": {
+          "prev_state_hash": { "const": null },
+          "result_id": { "const": null }
+        }
+      },
+      "else": { "properties": { "prev_state_hash": { "type": "string" } } }
+    }
+  ],
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{22}$" },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "positive_counter": { "type": "integer", "minimum": 1, "maximum": 2147483647 },
+    "detached_jws": { "type": "string", "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]{86}$" }
+  }
+}

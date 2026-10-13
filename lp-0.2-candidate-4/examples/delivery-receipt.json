@@ -1,0 +1,87 @@
+{
+ "what": "a recipient's receipt (SPEC §19.4)",
+ "from_vector": "C2-one-thing-three-channels",
+ "context": {
+  "now": 1790000000,
+  "negotiated": true,
+  "mint_seed": "thing-1",
+  "bindings": {
+   "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M": [
+    "zvKD7h9pKAD4TpheJw_XydMp",
+    "bvgv4eO2xOQRMkCtarsFwPsV",
+    "iTQ73-pKzWatzBc5ARPh_V-I"
+   ],
+   "aUTW4s-5oxyFQYgxtrYo0RHBPEST0CglZbdJnn3EGM8": [
+    "WrUZVnj560-zXmpvcXO1cCJD",
+    "tpY-M50sOTjA-i_TYP-VcpZj",
+    "tZAUHtRGmUOKvh3MZdaVeGuG",
+    "iK_t5kwFrKV88KG3NwQ5Gh91",
+    "etEBQlRLHGP1_h2g6trNsBnE"
+   ],
+   "xKctYsKgwQtvATCsitAzPlSr5hJ9TWN9sNMFkq_pQcc": [
+    "4LrYkfoDoE5oloA_NjyXctq_"
+   ],
+   "KDYznzSsNfbGe8eXBRXrzGKBOQgZfYOgDD92AKKYARg": [
+    "SgTpY-JVFtg76gSHUjaVn0QR"
+   ],
+   "sj4RWD84Pf-WsJfp_9ddACsh_BRa4TZ2G6rocRP2e8c": [
+    "8ktmt6m6rVFDMKT_4bTuduus"
+   ]
+  },
+  "thing": {
+   "thing_id": "VdKed7Kr2e4Uwv7XuVCG7g",
+   "status": "OPEN",
+   "parties": [
+    {
+     "role": "customer",
+     "kid": "r4q29T9kvYTMpu2kNSgXkOuDRiyejLeqrl18WGOCo3M",
+     "pub": "Vap4GgloIXjE4efAbgxTjRjhbazHjW25IfYH7BQc6bo",
+     "revoked": false
+    },
+    {
+     "role": "technician",
+     "kid": "aUTW4s-5oxyFQYgxtrYo0RHBPEST0CglZbdJnn3EGM8",
+     "pub": "SEgRlHLc8OElihm3jfukpcEX7yhpNYuBEa5GHLftEeY",
+     "revoked": false
+    },
+    {
+     "role": "provider",
+     "kid": "xKctYsKgwQtvATCsitAzPlSr5hJ9TWN9sNMFkq_pQcc",
+     "pub": "eZY_5ecpNc4NOaksaRFIdwCS7oypK_xW-1k2gnULKOU",
+     "revoked": false
+    },
+    {
+     "role": "customer",
+     "kid": "sj4RWD84Pf-WsJfp_9ddACsh_BRa4TZ2G6rocRP2e8c",
+     "pub": "cAQI-wAq4LPm4-8y6jYfOZ8APBMCtXVWcWUD4b0ng1g",
+     "revoked": true
+    },
+    {
+     "role": "agent",
+     "kid": "KDYznzSsNfbGe8eXBRXrzGKBOQgZfYOgDD92AKKYARg",
+     "pub": "Vy7oYWhd7WTwTG0v6SQJUntHS3AMwit-4y5e-I0wkkQ",
+     "revoked": false
+    }
+   ]
+  }
+ },
+ "object": {
+  "v": "lp02.channel/2",
+  "thing_id": "VdKed7Kr2e4Uwv7XuVCG7g",
+  "delivery_id": "0pA0iqMKKM80UnrbjNEG4Q",
+  "by": {
+   "role": "technician",
+   "kid": "aUTW4s-5oxyFQYgxtrYo0RHBPEST0CglZbdJnn3EGM8"
+  },
+  "payload_digest": "wrPAHc3Bt1t1XDvJKKMYmPtShmzaK32P14uYL1ZPZh0",
+  "received_at": "2026-09-21T14:13:20Z",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImFVVFc0cy01b3h5RlFZZ3h0cllvMFJIQlBFU1QwQ2dsWmJkSm5uM0VHTTgiLCJ0eXAiOiJscDAyLmRlbGl2ZXJ5LXJlY2VpcHQifQ..39EbGXBpN8oTrhq61oG8dP8TwBVHHJi8wx9E1dGL7-5ugzzdA9SN9CYLQ-jIW-sn7IKHCIPHRHRDlg6BWRhrAg"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "delivery_id": "0pA0iqMKKM80UnrbjNEG4Q",
+   "status": "DELIVERED"
+  }
+ }
+}

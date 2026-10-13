@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: >-
+  If you refer to the LYNE Protocol, please cite the exact version you used, as below. The specification text is
+  licensed under CC-BY-4.0; the schemas, test vectors, examples and conformance code under Apache-2.0 (LICENSE.md,
+  REUSE.toml). Neither license grants rights to the LYNE name or visual identity (TRADEMARK_POLICY.md).
+type: software
+title: "LYNE Protocol"
+abstract: >-
+  LYNE is communication infrastructure for matters between parties without persistent personal addresses: a signed,
+  versioned Thing and State, a purpose-bound and time-limited Grant, a temporary Live Line, and a Result signed by
+  both parties that anchors the next State. LP 0.1 is the immutable baseline; LP 0.2 candidate-4 is an experimental
+  candidate. The repository contains the specification texts, JSON Schemas, test vectors, examples and a
+  language-neutral conformance kit.
+authors:
+  - family-names: "Šuman"
+    given-names: "Margus"
+    affiliation: "Nocta OÜ"
+    country: "EE"
+version: "0.1"
+keywords:
+  - protocol
+  - capability
+  - authority
+  - provider-client
+  - WebRTC
+  - specification
+  - conformance
+references:
+  - type: standard
+    title: "LYNE Protocol (LP) 0.1, draft 3 — specification text"
+    authors:
+      - family-names: "Šuman"
+        given-names: "Margus"
+        affiliation: "Nocta OÜ"
+        country: "EE"
+    version: "0.1"
+    license: CC-BY-4.0
+  - type: standard
+    title: "LYNE Protocol 0.2 — candidate 4 (experimental) — specification text"
+    authors:
+      - family-names: "Šuman"
+        given-names: "Margus"
+        affiliation: "Nocta OÜ"
+        country: "EE"
+    version: "0.2-candidate-4"
+    license: CC-BY-4.0
+  - type: software
+    title: "LYNE Protocol — schemas, test vectors, examples and conformance code"
+    authors:
+      - family-names: "Šuman"
+        given-names: "Margus"
+        affiliation: "Nocta OÜ"
+        country: "EE"
+    license: Apache-2.0

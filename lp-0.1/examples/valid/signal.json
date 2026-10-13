@@ -1,0 +1,45 @@
+{
+  "note": "TEST VECTORS derived from public labels. NOT SECRETS. MUST NOT be used outside tests.",
+  "label_prefix": "LYNE LP 0.1 TEST VECTOR - NOT A SECRET - ",
+  "nonce_labels": {
+    "p2c": "signal nonce p2c 1",
+    "c2p": "signal nonce c2p 1"
+  },
+  "bucket": 5968632,
+  "messages": {
+    "p2c": {
+      "lp_version": "0.1",
+      "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+      "line_seq": 1,
+      "seq": 1,
+      "from": "provider",
+      "kind": "offer",
+      "body": "v=0 (TEST VECTOR placeholder for an SDP offer)",
+      "sent_at": "2026-09-28T10:00:05Z",
+      "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..XcZzKH4GyH6eVkH6CVVsOf6lqB-1kbeEaabCPjv0r5rKx1IVp3Px4sVoKw8OZfnwU3mezRIEKs6PEIHFvjMvBw"
+    },
+    "c2p": {
+      "lp_version": "0.1",
+      "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+      "line_seq": 1,
+      "seq": 1,
+      "from": "client",
+      "kind": "answer",
+      "body": "v=0 (TEST VECTOR placeholder for an SDP answer)",
+      "sent_at": "2026-09-28T10:00:09Z",
+      "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImRYRlFTWVBMUmwzeUk0RlBLZkdiR2pPYkJGcVJpNHRoakppRTV5TkVrOWMifQ..i8m5jd6f1p-d9s5Ob6KdeYw5kBkAoZzg884u0X_k0gN7bfk9W9-SLVbMWG4ue2YSuO_z4ArRWdhKLDWURRIRAw"
+    }
+  },
+  "envelopes": {
+    "p2c": {
+      "addr": "9iducG9NjhQpG5TewWiKInGD2pfA3Xrl21lYCIEcqyA",
+      "n": "_JwB1PcvRzE_6cBT",
+      "c": "hAVwpzcwJZ7-k90vzszSL92PaS_hXl1CVNYKy9UGRwVBrzJBBeviGDUKylfpX-maRd0lRXCWoBq69YG3EL-QUmP6hnkadimZwYWZ7cqlvjkkrnEhpz58ppxFRlBdS4yUm8Q1sQSJ6ymVRU9SYWzGLWw72jxUtroAeCwF_GuYpNscfDgqtUKoDOgFjJEWGWcJX2dCVFaDvRcK6duUeg-R0j5vIB_R2xM5yqI2t6RYVSDAvR_dzvVfz0lXY2yCnx5WsVyNA4ayvxJGTR4xUz0510VyBGDjzZp_PNCtyBt76ztC28i1Uae8iYuUZxmJ-AWvJ28sSc8RXbhbWjYhGyrNcR0Ker9fy8R19KfsegfGVDRiW3-vlhLEb9eFufs7Fgc8B1H2ntCqP032vsX5EY_NZdB3IG18LAxCzAx2MQ1UtJmoGNf3IkuoUyQG4Nsp2RDfPFMftF8Cn5N_nbLbhGt2sCquvOqrBxVSvsVlnHDWmmM11VQUDc4kBkr0oywqcVdHqhMUder26EGOXAkP7D37xEvlsLSckgXI"
+    },
+    "c2p": {
+      "addr": "DEF2HlyfyNTMn7C9OzhKY4hRUH3aSJxXSh-vD7zYo2k",
+      "n": "3FJNHD7U7K9zi2FV",
+      "c": "JugIRs0GWX_BgybYjf59POILb89XZ5NXoxxbSwctLa-c02mRFYfI9sdNRkXsyeOHmGTqY6NrUCr68DyCavd6N3M2KtH_Wcecy3bkDVEhC9q0CNcxbQAxD-lhEQ3niGlfelh6-RNwIAnChb22z3rbYIDy5glVcoKVui0DGZMfWfrd8aRT_Dp5wR6aXJ_acL_v-v_qF7X4HrkOaCyxW_24UxkDPaSROPKhxzOGu98HChznaDtHTUu2BJzrEI6PX-611W2iP3b1EgIrj3U2JanqXRNqAyZg5NLRO-SWc_UuzjlvwUWKcOufVTbrsJ8peqrFtK4pzN7rCQQdMoQpSwZGsDzgPJI1BHrZ6QscF7Lp5nA0xXc4cB2CKmpH64ecXlja3yr50UR9znkQHH0WvGtpCvl1FKrVJxBBiI00e86SJ1L8Qm3cQ06r-m95VVsOW9grMzQMFCIlZyYuZTZOEZM0ocNNF2Jn15MxphO7SHxh5AUNo9e7CEvnLh4ebyJW1UwqD34UMZu7Zx-cnzui1aMyYbo12UGqi_j0"
+    }
+  }
+}

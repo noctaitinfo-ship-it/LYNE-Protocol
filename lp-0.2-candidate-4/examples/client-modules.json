@@ -1,0 +1,21 @@
+{
+ "what": "a client endpoint's module declaration (SPEC §3.3)",
+ "from_vector": "CM-ok",
+ "context": {
+  "now": 1790000000
+ },
+ "object": {
+  "v": "lp02.federation/1",
+  "modules": {
+   "lp02.request": [
+    1
+   ],
+   "lp02.exit": [
+    1
+   ]
+  }
+ },
+ "expect": {
+  "outcome": "ACCEPT"
+ }
+}

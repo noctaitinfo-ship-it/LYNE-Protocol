@@ -1,0 +1,4 @@
+# The LP 0.1 protocol checks need these (the LP 0.2 candidate's checks and the package check use the standard library only).
+# python -m pip install -r tests/requirements.txt
+jsonschema==4.26.0
+cryptography==50.0.0

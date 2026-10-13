@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "referral.schema.json",
+ "title": "LP 0.2 referral (PRIVATE, EXPERIMENTAL, UNPUBLISHED, NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "v",
+  "iss",
+  "aud",
+  "point_id",
+  "purpose",
+  "nonce",
+  "exp",
+  "signature"
+ ],
+ "properties": {
+  "v": {
+   "const": "lp02.referral/1"
+  },
+  "iss": {
+   "type": "string"
+  },
+  "aud": {
+   "type": "string"
+  },
+  "point_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "purpose": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9._-]{0,31}$"
+  },
+  "nonce": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "exp": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "signature": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]+$"
+  }
+ }
+}

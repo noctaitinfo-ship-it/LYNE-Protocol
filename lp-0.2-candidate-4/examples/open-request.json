@@ -1,0 +1,59 @@
+{
+ "what": "an OPEN request, signed by a one-time key (SPEC §4.1)",
+ "from_vector": "O-ok",
+ "context": {
+  "now": 1790000000,
+  "origin": "https://a.example",
+  "point": {
+   "point_id": "8RD30m1fD5NQ4PciafadNQ",
+   "label": "Plumbing desk",
+   "service": "repair.plumbing",
+   "purposes": [
+    {
+     "code": "leak",
+     "label": "A leak"
+    },
+    {
+     "code": "quote",
+     "label": "A quote"
+    }
+   ],
+   "admission": {
+    "mode": "public",
+    "humans": "allow",
+    "agents": "allow",
+    "referral": false,
+    "max_pending": 50,
+    "max_open": 500
+   },
+   "grant": {
+    "channels": [
+     "data"
+    ],
+    "line_max_seconds": 600,
+    "lifetime_seconds": 3600
+   },
+   "status": "ACTIVE",
+   "valid_until": "2026-09-28T14:13:20Z"
+  },
+  "codes": [],
+  "peers": []
+ },
+ "object": {
+  "v": "lp02.admission/1",
+  "aud": "https://a.example",
+  "point_id": "8RD30m1fD5NQ4PciafadNQ",
+  "purpose": "leak",
+  "actor": "human",
+  "opener_pub": "go58jJKR8vCMyOxaaL9PCyoRYiIfqQrJWwawMtrPi54",
+  "nonce": "VSuW4BmGgklxLXHG0lHmIA",
+  "created": 1790000000,
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IkF5MWJFSXJ0STU1Q01mYVRZT04yS2hYNkhud1lnX3hPSGRLRGNTSjhjS1kiLCJ0eXAiOiJscDAyLm9wZW4ifQ..FaGbNeXz45rm1YN8kGntxpViKo0_AnYGas2OW1ozEV97LGrGwyFUZcQJsfK8nPGGKZveOlVgW9-2q76Zv2zkAQ"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "admitted": true
+  }
+ }
+}

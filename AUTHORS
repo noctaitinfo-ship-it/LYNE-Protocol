@@ -1,0 +1,15 @@
+# LYNE Protocol — authors
+
+Author and original designer of the LYNE Protocol family (LP 0.1, the LP 0.2 candidates and every later version):
+
+Margus Šuman
+Estonia
+
+Affiliation: Nocta OÜ (Estonia), which operates the LYNE project.
+
+Protocol Steward: Margus Šuman (GOVERNANCE.md).
+
+No other person is an author of the protocol. Contributors to a specific version, if any, are credited in that
+version's CHANGELOG entry; accepting contributions never changes the originator or the historical authorship above.
+Software tools used while writing the specifications, tests or this package (including AI assistants) are tools, not
+authors.

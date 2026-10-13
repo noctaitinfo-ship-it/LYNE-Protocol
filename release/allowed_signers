@@ -1,0 +1,5 @@
+# LYNE Protocol — canonical allowed signers for official releases (release/SIGNING.md).
+# Format: OpenSSH ALLOWED SIGNERS (ssh-keygen(1)). One line per release key: the principal, its options, the PUBLIC key.
+# valid-after / valid-before bound each key's period, so a release keeps verifying under the key that was active when
+# it was signed, also after a rotation. Revoked keys are listed in revoked_signers. No private key is ever here.
+lyne-protocol-steward namespaces="git",valid-after="20261007" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGA/QSnHLfhuiv+FaB+4IIgc28nKyv66k4jTr4Q4XYP2 LYNE protocol release signing (active since 2026-10-07)

@@ -1,0 +1,126 @@
+{
+ "what": "a delegation chain root → A → B → C (SPEC §13)",
+ "from_vector": "AD-chain",
+ "context": {
+  "now": 1790000000,
+  "thing": {
+   "thing_id": "NJh2RIc-vvEIPMUhhP9zpA",
+   "aud": "https://a.example",
+   "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+   "epoch": 1
+  },
+  "revoked": {
+   "ids": [],
+   "kids": []
+  },
+  "uses": {}
+ },
+ "object": [
+  {
+   "v": "lp02.delegation/1",
+   "delegation_id": "cldxo1L1wYnc1cPanz6-iQ",
+   "thing_id": "NJh2RIc-vvEIPMUhhP9zpA",
+   "aud": "https://a.example",
+   "epoch": 1,
+   "parent": null,
+   "issuer_kid": "a78ZspvteDo2IjCPPX0Ku3EeL1aCtNiErs-JOx8TQ30",
+   "subject_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8",
+   "actions": [
+    "answer",
+    "line",
+    "read",
+    "subscribe"
+   ],
+   "channels": [
+    "data",
+    "video",
+    "voice"
+   ],
+   "purpose": "repair",
+   "not_before": "2026-09-21T13:13:20Z",
+   "exp": "2026-09-21T15:13:20Z",
+   "max_uses": 100,
+   "depth": 3,
+   "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmRlbGVnYXRpb24ifQ..OMuMa2MJfCZZs6xapLLCaE7OXxymjzsas5xin45oM6yiyNjhIQtqPGnZ5wuyz4VY6Rjg4iqunel2dcA2zNdhDQ"
+  },
+  {
+   "v": "lp02.delegation/1",
+   "delegation_id": "p7T9tE3sF5stf1fiwNk8sQ",
+   "thing_id": "NJh2RIc-vvEIPMUhhP9zpA",
+   "aud": "https://a.example",
+   "epoch": 1,
+   "parent": {
+    "delegation_id": "cldxo1L1wYnc1cPanz6-iQ",
+    "hash": "5U2ifUJaYdg0r-w58_rvX1QlZ54HXX445TEcbJUW5Ig"
+   },
+   "issuer_kid": "pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE",
+   "subject_pub": "ivGNbRk27KCNrBICou1n7Pp2jI2lseItxeJDpr1Oz7M",
+   "actions": [
+    "answer",
+    "read"
+   ],
+   "channels": [
+    "data"
+   ],
+   "purpose": "repair.booking",
+   "not_before": "2026-09-21T13:13:20Z",
+   "exp": "2026-09-21T15:13:20Z",
+   "max_uses": 10,
+   "depth": 2,
+   "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InBSajFYN2tjOTFDU08wMVpMYTFBU0JpY2dDTnlOaDNQY1RCcVRIX1VmbEUiLCJ0eXAiOiJscDAyLmRlbGVnYXRpb24ifQ..vpS7xMSIbsNvdJyAvMV4u6pPYnAB08ROJAnjk1YTfT2F01UTQDK3GjT_UzsgCwZhYeQVVv9LN3OjXIQjgjJRBA"
+  },
+  {
+   "v": "lp02.delegation/1",
+   "delegation_id": "tx__aya28GRdJjBWPZ0JsA",
+   "thing_id": "NJh2RIc-vvEIPMUhhP9zpA",
+   "aud": "https://a.example",
+   "epoch": 1,
+   "parent": {
+    "delegation_id": "p7T9tE3sF5stf1fiwNk8sQ",
+    "hash": "P5gLzJW5LUYpx7Wl5CyBmZL1EtoSa-1rw4w5oE4f4Wk"
+   },
+   "issuer_kid": "ull7Fb6A_9A6nOJRoVaKkWHvKYNrrBqgBY5Wq3BtLa8",
+   "subject_pub": "XVVjaWYR-RDWtVBiOYju4SFatH9rmphceWSrcCHW9aw",
+   "actions": [
+    "read"
+   ],
+   "channels": [],
+   "purpose": "repair.booking",
+   "not_before": "2026-09-21T13:13:20Z",
+   "exp": "2026-09-21T15:13:20Z",
+   "max_uses": 5,
+   "depth": 1,
+   "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6InVsbDdGYjZBXzlBNm5PSlJvVmFLa1dIdktZTnJyQnFnQlk1V3EzQnRMYTgiLCJ0eXAiOiJscDAyLmRlbGVnYXRpb24ifQ..MGDKbJXq7ubZ2U4bXlQU0xIOPFLUFUGsS46RpPihDPUBUcUTLvq23VWEijHddmuOzGE9AyV5UYIgEMam8afqDA"
+  },
+  {
+   "v": "lp02.delegation/1",
+   "delegation_id": "plZaQ514Mf3PBcMa4-DFrQ",
+   "thing_id": "NJh2RIc-vvEIPMUhhP9zpA",
+   "aud": "https://a.example",
+   "epoch": 1,
+   "parent": {
+    "delegation_id": "tx__aya28GRdJjBWPZ0JsA",
+    "hash": "-_9fBceD7yLtQO7tV0UJz_6OA8kTZO3G_82kMvAY26w"
+   },
+   "issuer_kid": "XrS4jKUR2d_URn5RCyqH1O1dA_B75skBwKOcrVYZJBQ",
+   "subject_pub": "J3qd6m99CyKoeqLCuemPkY78kqMO4aoTk78X5OjesnQ",
+   "actions": [
+    "read"
+   ],
+   "channels": [],
+   "purpose": "repair.booking",
+   "not_before": "2026-09-21T13:13:20Z",
+   "exp": "2026-09-21T15:13:20Z",
+   "max_uses": 2,
+   "depth": 0,
+   "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IlhyUzRqS1VSMmRfVVJuNVJDeXFIMU8xZEFfQjc1c2tCd0tPY3JWWVpKQlEiLCJ0eXAiOiJscDAyLmRlbGVnYXRpb24ifQ..HevRGb3ZVLihC7JcIsE1D9ny36nBaR1U-8F1Qkb_C_PcHA9BM3aChJVuaLi7FCtp8VioC4Pwa65MLldY6bc0Dg"
+  }
+ ],
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "leaf_kid": "I73LLfecb7p5u7sL6mw37gaqZiXf74nDEDZ_cBZo5-g",
+   "length": 4
+  }
+ }
+}

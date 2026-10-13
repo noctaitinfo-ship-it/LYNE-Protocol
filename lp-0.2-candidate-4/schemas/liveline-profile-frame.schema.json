@@ -1,0 +1,37 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "lp02.liveline/1/profile-frame",
+ "title": "lp02.liveline/1 profile frame (SPEC §4) — the first message on lyne-control",
+ "description": "PRIVATE · EXPERIMENTAL · NOT LP 0.1. Shape only: the profile values (ids 0/1, negotiated, ordered, reliability, protocol) and the Grant's data authority are SPEC §5 rules 6-9.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["lyne", "t", "channels"],
+ "properties": {
+  "lyne": { "const": "lp02.liveline/1" },
+  "t": { "const": "profile" },
+  "channels": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": ["lyne-control", "lyne-data"],
+   "properties": {
+    "lyne-control": { "oneOf": [ { "type": "null" }, { "$ref": "#/$defs/descriptor" } ] },
+    "lyne-data": { "oneOf": [ { "type": "null" }, { "$ref": "#/$defs/descriptor" } ] }
+   }
+  }
+ },
+ "$defs": {
+  "descriptor": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": ["id", "negotiated", "ordered", "protocol", "maxRetransmits", "maxPacketLifeTime"],
+   "properties": {
+    "id": { "type": "integer", "minimum": 0, "maximum": 65534 },
+    "negotiated": { "type": "boolean" },
+    "ordered": { "type": "boolean" },
+    "protocol": { "type": "string", "maxLength": 255 },
+    "maxRetransmits": { "oneOf": [ { "type": "null" }, { "type": "integer", "minimum": 0, "maximum": 65535 } ] },
+    "maxPacketLifeTime": { "oneOf": [ { "type": "null" }, { "type": "integer", "minimum": 0, "maximum": 65535 } ] }
+   }
+  }
+ }
+}

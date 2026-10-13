@@ -1,0 +1,63 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "open-request.schema.json",
+ "title": "LP 0.2 open-request (PRIVATE, EXPERIMENTAL, UNPUBLISHED, NOT LP 0.1)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "v",
+  "aud",
+  "point_id",
+  "purpose",
+  "actor",
+  "opener_pub",
+  "nonce",
+  "created",
+  "signature"
+ ],
+ "properties": {
+  "v": {
+   "const": "lp02.admission/1"
+  },
+  "aud": {
+   "type": "string"
+  },
+  "point_id": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "purpose": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9._-]{0,31}$"
+  },
+  "actor": {
+   "enum": [
+    "human",
+    "agent"
+   ]
+  },
+  "opener_pub": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{43}$"
+  },
+  "nonce": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{22}$"
+  },
+  "created": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "admit": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{43}$"
+  },
+  "fed_referral": {
+   "$ref": "referral.schema.json"
+  },
+  "signature": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]+\\.\\.[A-Za-z0-9_-]+$"
+  }
+ }
+}

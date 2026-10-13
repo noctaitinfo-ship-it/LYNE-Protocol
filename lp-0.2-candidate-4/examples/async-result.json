@@ -1,0 +1,75 @@
+{
+ "what": "an async Result with the client's signed answer (SPEC §12)",
+ "from_vector": "AR-valid",
+ "context": {
+  "now": 1790000000,
+  "thing": {
+   "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+   "aud": "https://a.example",
+   "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+   "closed_at": null
+  },
+  "bindings": [
+   {
+    "epoch": 1,
+    "client_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8",
+    "bound_at": "2026-09-21T13:23:20Z",
+    "revoked_at": null
+   }
+  ],
+  "accepted": []
+ },
+ "object": {
+  "v": "lp02.result/1",
+  "result_id": "8wG_UywQe1hKUaAp8bgx5w",
+  "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+  "aud": "https://a.example",
+  "outcome": "repair-done",
+  "epoch": 1,
+  "issued_at": "2026-09-21T14:13:20Z",
+  "basis": {
+   "kind": "request_answer",
+   "question": {
+    "request_id": "MqqEi7q3dgVXSGdTDsPrqw",
+    "thing_id": "6S67Froq1FzHbhX8pZ3RzA",
+    "template": "visit-done",
+    "label": "Is the repair done?",
+    "options": [
+     {
+      "code": "fixed",
+      "label": "Yes, it works"
+     },
+     {
+      "code": "not-fixed",
+      "label": "No, book again"
+     },
+     {
+      "code": "later",
+      "label": "Ask me later"
+     }
+    ],
+    "conclusion": {
+     "fixed": "repair-done",
+     "not-fixed": "repair-failed"
+    },
+    "deadline": "2026-09-21T15:13:20Z",
+    "created_at": "2026-09-21T14:03:20Z"
+   },
+   "answer": {
+    "option": "fixed",
+    "created": 1789999940,
+    "kid": "pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE",
+    "signature_input": "sig1=(\"@method\" \"@target-uri\" \"content-digest\");created=1789999940;keyid=\"pRj1X7kc91CSO01ZLa1ASBicgCNyNh3PcTBqTH_UflE\";alg=\"ed25519\"",
+    "signature": "sig1=:h1JvL8c6MoEV2dtTp64UC2C5YDS2sjPOSocpcnhVEkJbDqeiU4pAwCyoXpZbDLtfE11C00MjCPDJFDuJYLxxAg==:"
+   }
+  },
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLnJlc3VsdCJ9..J08nd-39xTOEgOXybGK_aLXkuY4BJ4S5JAYLN_WeHfgxVBVYOuQlesaYwAoOgihXUDSJXif2hiqTo_lI-L8bAA"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "outcome": "repair-done",
+   "option": "fixed"
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "lp_version": "0.1",
+  "thing_id": "vhSMJJ4nW5zOunW6D4lREw",
+  "version": 2,
+  "prev_state_hash": "zbquiUsLwdwVMVckAd0kegjOAGBJ6NVqa1yoJeZrbe8",
+  "status": "CLOSED",
+  "waiting_on": null,
+  "next_action": null,
+  "deadline": "2026-09-29T16:00:00Z",
+  "actor": "provider",
+  "result_id": "8zdVNYsuL8eIT4SdNPv7VA",
+  "timestamp": "2026-09-28T10:12:30Z",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6IndGdnlySVRjWm9vSjhMMWs4RHlIUFB3YTk5NVc3VFp0My1XczRkX3JZaUUifQ..JwXm2KVwXhS1PKDELwBBZp0nlSkOp0eQT9tSotkwBBL8AwAO2-lg5uPHt_RLtyQkM1zmFv8FoCH488I9c_UzCg"
+}

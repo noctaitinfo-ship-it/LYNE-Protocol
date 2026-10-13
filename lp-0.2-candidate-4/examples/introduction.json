@@ -1,0 +1,46 @@
+{
+ "what": "an introduction by context (SPEC §18.2)",
+ "from_vector": "IN-valid",
+ "context": {
+  "now": 1790000000,
+  "thing": {
+   "thing_id": "szfKTTaXl_Ko5Oaeslxr6g",
+   "aud": "https://a.example",
+   "provider_pub": "a1mbfDqpEwbNW6NJUUcsaJfObdCfEBkQoPTQwsTqWRs",
+   "client_pub": "FM9KunWIPSvuEKzjmYF7uFQR_fthLve3g8wlbdOw4I8"
+  }
+ },
+ "object": {
+  "v": "lp02.introduction/1",
+  "intro_id": "cu4vHmFYzlt--1uNihPFqw",
+  "thing_id": "szfKTTaXl_Ko5Oaeslxr6g",
+  "aud": "https://a.example",
+  "by": "provider",
+  "target": {
+   "aud": "https://b.example",
+   "point_id": "mczILLTchOpIuGNDd7wjig",
+   "provider_pub": "MAoXjoQ98spUsMd2zj5pCWi88bu7yEhFkNDn1xZYXO4"
+  },
+  "purpose": "visit",
+  "issued_at": "2026-09-21T14:12:20Z",
+  "exp": "2026-09-22T14:13:20Z",
+  "signature": "eyJhbGciOiJFZERTQSIsImtpZCI6ImE3OFpzcHZ0ZURvMklqQ1BQWDBLdTNFZUwxYUN0TmlFcnMtSk94OFRRMzAiLCJ0eXAiOiJscDAyLmludHJvZHVjdGlvbiJ9..NYyWxTRS2UmsPSiylBd5I86t6KH1FXQ3X_2aUm6j9hDG0Y53x8GlCZ3qpAWSqttmbQ59hf4hQ-GY_C_U8KtUAQ"
+ },
+ "expect": {
+  "outcome": "ACCEPT",
+  "result": {
+   "checked_target": false,
+   "purpose": "visit",
+   "introduced_by": {
+    "thing_id": "szfKTTaXl_Ko5Oaeslxr6g",
+    "role": "provider",
+    "kid": "a78ZspvteDo2IjCPPX0Ku3EeL1aCtNiErs-JOx8TQ30"
+   },
+   "target": {
+    "aud": "https://b.example",
+    "point_id": "mczILLTchOpIuGNDd7wjig",
+    "provider_kid": "v9wzDt1P0d-H8KzE78H49cuU82Q-LrgC_w3VJ6HsFaU"
+   }
+  }
+ }
+}
