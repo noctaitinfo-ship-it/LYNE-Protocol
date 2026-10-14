@@ -17,6 +17,12 @@ authors:
     affiliation: "Nocta OÜ"
     country: "EE"
 version: "0.1"
+doi: "10.5281/zenodo.23360335"
+repository-code: "https://github.com/noctaitinfo-ship-it/LYNE-Protocol"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23360336"
+    description: "LYNE Protocol 0.1 (release lp-0.1)"
 keywords:
   - protocol
   - capability

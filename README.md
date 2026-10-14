@@ -138,9 +138,9 @@ Steward** (`AUTHORS`, `GOVERNANCE.md`). Nocta OÜ (Estonia) is the author's affi
 ## How to cite
 
 Cite the exact version you used. The machine-readable form is [`CITATION.cff`](CITATION.cff); an archived copy of each
-release, with a DOI, is on Zenodo (the DOI is listed here once the release is archived).
+release, with a DOI, is on Zenodo: all versions https://doi.org/10.5281/zenodo.23360335; this release (`lp-0.1`) https://doi.org/10.5281/zenodo.23360336.
 
-> Šuman, M. (2026). *LYNE Protocol 0.1* [Protocol specification and conformance kit]. Signed tag `lp-0.1`.
+> Šuman, M. (2026). *LYNE Protocol 0.1* [Protocol specification and conformance kit]. Zenodo. https://doi.org/10.5281/zenodo.23360336
 
 For LP 0.2 candidate-4, cite it as an experimental candidate: *LYNE Protocol 0.2, candidate 4 (experimental)*, tag
 `lp-0.2-candidate-4`.
